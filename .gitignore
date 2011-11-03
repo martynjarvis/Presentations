@@ -1,4 +1,6 @@
 *.aux
+*.nav
+*.snm
 *.glo
 *.idx
 *.log
