@@ -1,10 +1,12 @@
 # vim: tabstop=8 shiftwidth=8 noexpandtab
 # makefile for pdflatex
 INPUT  = Presentation
-OUTPUT = Presentation
+#DATE   = `shell date "+%Y%m%d%" `
+DATE   = $(shell date "+%Y%m%d")
+OUTPUT = Presentation$(DATE)
 
 $(OUTPUT).pdf: $(INPUT).tex
-	pdflatex $(INPUT).tex
+	pdflatex -jobname $(OUTPUT) $(INPUT).tex
 
 show: $(OUTPUT).pdf
 	evince $(OUTPUT).pdf
