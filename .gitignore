@@ -2,6 +2,7 @@
 *.nav
 *.snm
 *.glo
+*.d
 *.idx
 *.log
 *.toc
