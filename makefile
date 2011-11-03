@@ -2,8 +2,8 @@
 # makefile for pdflatex
 INPUT  = Presentation
 #DATE   = `shell date "+%Y%m%d%" `
-DATE   = $(shell date "+%Y%m%d")
-OUTPUT = Presentation$(DATE)
+DATE   = $(shell date "+%d%b")
+OUTPUT = hgg_mjarvis_$(DATE)
 
 $(OUTPUT).pdf: $(INPUT).tex
 	pdflatex -jobname $(OUTPUT) $(INPUT).tex
