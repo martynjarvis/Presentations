@@ -14,52 +14,72 @@
 %   \tableofcontents
 % \end{frame}
 
-\begin{frame}{Overview}
+\begin{frame}{How to Select Input Variables}
   \begin{itemize}  
-   \item Rank
-   \item Only Mass and Res
-   \item Add each variable in one at a time
+   \item Want to justify our choice of input variables we use in the BDT
+   \item Quantify the gain in sensitivty each variable give us
+   \item Remove variables that offer us nothing
    \end{itemize}
 \end{frame}
 
-\begin{frame}{Ranking}
+\begin{frame}{Ranking Variables}
   \begin{itemize}  
-   \item Trained BDT over all input variables 
-   \item Used output to rank variables in order of separation between signal and
-background
+   \item Need a scheme to rank the input variables
+   \item Trained a variable with only mass and resolution
+   \item Trained N BDTs for each N additional variables using only mass,
+resolution and $variable_N$
+   \item Used the performance of the BDTs compared to the nominal BDT to rank variables
+   \item Integral under signal efficieny vs background rejection curve to
+quantify ther performance
    \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Decorrelated}
+\begin{frame}{Ranking Variables}
   \begin{center}
-%       \includegraphics[width=0.9\textwidth]{fig/filelist}
+    \begin{tabular}{| l | c c |} \hline
+      Variable & $Int_{eff}$ & ratio \\ \hline
+      mass and res & 0.1     & 1.    \\ \hline
+      and var1     & 0.1     & 1.    \\
+      and var2     & 0.1     & 1.    \\
+      and var3     & 0.1     & 1.    \\
+      and var4     & 0.1     & 1.    \\
+      and var5     & 0.1     & 1.    \\
+      and var6     & 0.1     & 1.    \\
+      %\multicolumn{3}{c}{$\sigma$=.20} & \multicolumn{3}{c|}{$\sigma$=.40} \\ \hline
+      \hline
+    \end{tabular}
   \end{center}
+  \begin{itemize}  
+    \item We see that var1,var2 and var3 perform well
+    \item No sensitivity offered by var4 and var5
+  \end{itemize}
+\end{frame}
+ 
+\begin{frame}{Selecting Variables}
+  \begin{itemize}  
+    \item Ranking does not take in to account correlations between variables
+    \item Correlations may both increase sensitivity, or hide it behind
+``noise''
+    \item BDTs are trained with mass and resolution, and the first N ranked
+variables.
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{Mass and Res only}
-  \begin{center}
-%       \includegraphics[width=0.9\textwidth]{fig/filelist}
-  \end{center}
+\begin{frame}{Selecting Variables}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+   \item COL 1
+   \item COL 1
+   \item COL 1
+   \end{itemize}
+  \column{.5\textwidth}
+    % plot showing integral vs ranked variable
+    %\includegraphics[width=\textwidth]{fig/InvMassPlot}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Efficieny curves}
-  \begin{center}
-%       \includegraphics[width=0.9\textwidth]{fig/filelist}
-  \end{center}
-\end{frame}
-
-\begin{frame}{Efficieny curves}
-  \begin{center}
-%       \includegraphics[width=0.9\textwidth]{fig/filelist}
-  \end{center}
-\end{frame}
-
-\begin{frame}{Limits}
-  \begin{center}
-%       \includegraphics[width=0.9\textwidth]{fig/filelist}
-  \end{center}
-\end{frame}
 
 
 
