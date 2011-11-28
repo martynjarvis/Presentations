@@ -17,68 +17,112 @@
 \begin{frame}{How to Select Input Variables}
   \begin{itemize}  
    \item Want to justify our choice of input variables we use in the BDT
-   \item Quantify the gain in sensitivty each variable give us
-   \item Remove variables that offer us nothing
+   \item For the diphoton backgrounds, the only difference between signal 
+   and background is the resonant mass peak and the decay angle coming from
+   the spin 0 Higgs
+   \item Reweight input sample after including each variable to remove
+   dependence on these variables 
+   \item See if the differences in the pt spectrum go away.
+   \item All that follows is with prompt-prompt only
    \end{itemize}
 \end{frame}
 
-\begin{frame}{Ranking Variables}
-  \begin{itemize}  
-   \item Need a scheme to rank the input variables
-   \item Trained a variable with only mass and resolution
-   \item Trained N BDTs for each N additional variables using only mass,
-resolution and $variable_N$
-   \item Used the performance of the BDTs compared to the nominal BDT to rank variables
-   \item Integral under signal efficieny vs background rejection curve to
-quantify ther performance
-   \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Ranking Variables}
-  \begin{center}
-    \begin{tabular}{| l | c c |} \hline
-      Variable & $Int_{eff}$ & ratio \\ \hline
-      mass and res & 0.1     & 1.    \\ \hline
-      and var1     & 0.1     & 1.    \\
-      and var2     & 0.1     & 1.    \\
-      and var3     & 0.1     & 1.    \\
-      and var4     & 0.1     & 1.    \\
-      and var5     & 0.1     & 1.    \\
-      and var6     & 0.1     & 1.    \\
-      %\multicolumn{3}{c}{$\sigma$=.20} & \multicolumn{3}{c|}{$\sigma$=.40} \\ \hline
-      \hline
-    \end{tabular}
-  \end{center}
-  \begin{itemize}  
-    \item We see that var1,var2 and var3 perform well
-    \item No sensitivity offered by var4 and var5
-  \end{itemize}
-\end{frame}
- 
-\begin{frame}{Selecting Variables}
-  \begin{itemize}  
-    \item Ranking does not take in to account correlations between variables
-    \item Correlations may both increase sensitivity, or hide it behind
-``noise''
-    \item BDTs are trained with mass and resolution, and the first N ranked
-variables.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Selecting Variables}
+\begin{frame}{Mass and Resolution}
   \begin{columns}[c]
   \column{.5\textwidth}
   \begin{itemize}
-    \item COL 1
-    \item COL 1
-    \item COL 1
+    \item Start with the Mass and resolution variables
+    \item Reweight signal sample to remove dependance on mass
   \end{itemize}
   \column{.5\textwidth}
-    % plot showing integral vs ranked variable
-    %\includegraphics[width=\textwidth]{fig/InvMassPlot}
+    % with variable
+    % \includegraphics[width=\textwidth]{fig/variables_Mass}
+   
+    % with variable reweighted
+    \includegraphics[width=\textwidth]{fig/variables_reMass}
   \end{columns}
 \end{frame}
 
+\begin{frame}{$cos\theta*$}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item Include $cos\theta*$
+    \item Expect difference between signal and background due to the spin of the Higgs
+    \item Reweighted sample to remove this dependence
+  \end{itemize}
+  \column{.5\textwidth}
+    % with variable
+    \includegraphics[width=\textwidth]{fig/variables_reMass_Theta}
+  
+    % with variable reweighted
+    \includegraphics[width=\textwidth]{fig/variables_reMass_reTheta}
+  \end{columns}
+\end{frame}
+
+% PT plots
+\begin{frame}{Other Variables}
+  \begin{itemize}  
+   \item Studied the remaining variables with the reweighted sample
+   \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Other Variables 1}
+    \includegraphics[width=\textwidth]{fig/variables_id_c1_123_all}
+\end{frame}
+
+\begin{frame}{Other Variables 2}
+    \includegraphics[width=\textwidth]{fig/variables_id_c2_123_all.pdf}
+\end{frame}
+
+\begin{frame}{Performance}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+   \item Conclusion to this part
+  \end{itemize}
+  \column{.5\textwidth}
+  \begin{center}
+    \begin{tabular}{ l | l | l } \hline
+        Rank & Variable                     & Separation\\
+        \hline
+        1 & $\sigma M / M                 $ & 3.908e-02\\
+        2 & $P_{T}^{Higgs}/M_{H}         $ & 1.647e-02\\
+        3 & $\Delta \phi                 $ & 1.243e-02\\
+        4 & $P_{T}^{lead} / M_{H}        $ & 1.208e-02\\
+        5 & $max(\eta^{lead},\eta^{sub.})$ & 1.145e-02\\
+        6 & $\eta^{lead}                 $ & 1.112e-02\\
+        7 & $\eta^{Higgs}                $ & 1.070e-02\\
+        8 & $\eta^{sublead}              $ & 9.908e-03\\
+        9 & $P_{T}^{sublead} / M_{H}     $ & 9.050e-03\\
+       10 & $min(r9^{lead},r9^{sub.})    $ & 8.690e-03\\
+       11 & $cos(\theta)*                $ & 4.375e-03\\
+       12 & $\Delta M / M_{Hypth}.        $ & 3.250e-03\\
+       \hline
+    \end{tabular}
+  \end{center}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Performance}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item Studied performance of BDT trained with 
+    \begin{itemize}
+      \item only Mass, Res and $cos\theta*$ 
+      \item Mass, Resolution, $cos\theta*$ and $P_T^{Higgs}$
+      \item BDT trained with usual variables
+    \end{itemize}
+    \item Plot shows signal efficiency versus background rejection
+  \end{itemize}
+  \column{.5\textwidth}
+    % with variable
+    \includegraphics[width=\textwidth]{fig/variables_reMass_reTheta_PtH}
+    % with variable reweighted
+    %\includegraphics[width=\textwidth]{fig/variables_reMass_reTheta_rePtH}
+  \end{columns}
+\end{frame}
 
 \end{document}
