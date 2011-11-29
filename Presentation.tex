@@ -14,7 +14,7 @@
 %   \tableofcontents
 % \end{frame}
 
-\begin{frame}{How to Select Input Variables}
+\begin{frame}{Input Variables}
   \begin{itemize}  
    \item Want to justify our choice of input variables we use in the BDT
    \item For the diphoton backgrounds, the only difference between signal 
@@ -35,11 +35,15 @@
     \item Reweight signal sample to remove dependance on mass
   \end{itemize}
   \column{.5\textwidth}
-    % with variable
-    % \includegraphics[width=\textwidth]{fig/variables_Mass}
+    \begin{itemize}  
+      \item Before reweighting 
+
+      \includegraphics[width=\textwidth]{fig/variables_Mass}
    
-    % with variable reweighted
-    \includegraphics[width=\textwidth]{fig/variables_reMass}
+      \item After reweighting 
+
+      \includegraphics[width=\textwidth]{fig/variables_reMass}
+    \end{itemize}
   \end{columns}
 \end{frame}
 
@@ -52,21 +56,25 @@
     \item Reweighted sample to remove this dependence
   \end{itemize}
   \column{.5\textwidth}
-    % with variable
-    \includegraphics[width=\textwidth]{fig/variables_reMass_Theta}
+    \begin{itemize}  
+      \item Before reweighting 
+
+      \includegraphics[width=\textwidth]{fig/variables_reMass_Theta}
   
-    % with variable reweighted
-    \includegraphics[width=\textwidth]{fig/variables_reMass_reTheta}
+      \item After reweighting 
+
+      \includegraphics[width=\textwidth]{fig/variables_reMass_reTheta}
+    \end{itemize}
   \end{columns}
 \end{frame}
 
-% PT plots
 \begin{frame}{Other Variables}
   \begin{itemize}  
-   \item Studied the remaining variables with the reweighted sample
+   \item Studied the remaining variables 
+   \item Signal samples are reweighted to remove mass and $cos\theta*$
+   dependence
    \end{itemize}
 \end{frame}
-
 
 \begin{frame}{Other Variables 1}
     \includegraphics[width=\textwidth]{fig/variables_id_c1_123_all}
@@ -76,13 +84,22 @@
     \includegraphics[width=\textwidth]{fig/variables_id_c2_123_all.pdf}
 \end{frame}
 
-\begin{frame}{Performance}
+\begin{frame}{Other Variables}
   \begin{columns}[c]
   \column{.5\textwidth}
   \begin{itemize}
-   \item Conclusion to this part
+    \item $P_{T}$ spectra do not show much separation after reweighting
+    \item Table on the right ranks the ``separation'' between signal and
+    background for the input variables
+    \begin{itemize}
+      \item 0 signal and background are identical
+      \item 1 signal and background do not overlap
+    \end{itemize}
+    \item $P_{T}^{Higgs}$ and $\Delta \phi$ are the next best sensetive
+    variables.
   \end{itemize}
   \column{.5\textwidth}
+  \tiny{
   \begin{center}
     \begin{tabular}{ l | l | l } \hline
         Rank & Variable                     & Separation\\
@@ -102,6 +119,7 @@
        \hline
     \end{tabular}
   \end{center}
+  }
   \end{columns}
 \end{frame}
 
@@ -118,10 +136,7 @@
     \item Plot shows signal efficiency versus background rejection
   \end{itemize}
   \column{.5\textwidth}
-    % with variable
-    \includegraphics[width=\textwidth]{fig/variables_reMass_reTheta_PtH}
-    % with variable reweighted
-    %\includegraphics[width=\textwidth]{fig/variables_reMass_reTheta_rePtH}
+    \includegraphics[width=\textwidth]{fig/rejBvsS}
   \end{columns}
 \end{frame}
 
