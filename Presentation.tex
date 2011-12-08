@@ -14,129 +14,46 @@
 %   \tableofcontents
 % \end{frame}
 
-\begin{frame}{Input Variables}
+\begin{frame}{Optimisation of BDTs}
   \begin{itemize}  
-   \item Want to justify our choice of input variables we use in the BDT
-   \item For the diphoton backgrounds, the only difference between signal 
-   and background is the resonant mass peak and the decay angle coming from
-   the spin 0 Higgs
-   \item Reweight input sample after including each variable to remove
-   dependence on these variables 
-   \item See if the differences in the pt spectrum go away.
-   \item All that follows is with prompt-prompt only
+   \item Optimise choice of NTrees, Depth, Shrinkage, etc
+   \item In latest TMVA, optimise BDT parameters
+   \item I use a Genetic Algorithm to maximise the FOM
+   \item FOM chosen is integral of signal eff backround rej curve
    \end{itemize}
 \end{frame}
 
-\begin{frame}{Mass and Resolution}
+\begin{frame}{Optimisation of BDTs}
   \begin{columns}[c]
   \column{.5\textwidth}
   \begin{itemize}
-    \item Start with the Mass and resolution variables
-    \item Reweight signal sample to remove dependance on mass
+    \item Plot shows the best FOM value found in each generation
   \end{itemize}
   \column{.5\textwidth}
-    \begin{itemize}  
-      \item Before reweighting 
-
-      \includegraphics[width=\textwidth]{fig/variables_Mass}
-   
-      \item After reweighting 
-
-      \includegraphics[width=\textwidth]{fig/variables_reMass}
-    \end{itemize}
+    %\includegraphics[width=\textwidth]{fig/rejBvsS}
   \end{columns}
 \end{frame}
 
-\begin{frame}{$cos\theta*$}
+\begin{frame}{Optimisation of BDTs}
   \begin{columns}[c]
   \column{.5\textwidth}
   \begin{itemize}
-    \item Include $cos\theta*$
-    \item Expect difference between signal and background due to the spin of the Higgs
-    \item Reweighted sample to remove this dependence
+    \item Plot shows the signal eff background rej curve for the previous
+    training and the new optimised
   \end{itemize}
   \column{.5\textwidth}
-    \begin{itemize}  
-      \item Before reweighting 
-
-      \includegraphics[width=\textwidth]{fig/variables_reMass_Theta}
-  
-      \item After reweighting 
-
-      \includegraphics[width=\textwidth]{fig/variables_reMass_reTheta}
-    \end{itemize}
+    %\includegraphics[width=\textwidth]{fig/rejBvsS}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Other Variables}
-  \begin{itemize}  
-   \item Studied the remaining variables 
-   \item Signal samples are reweighted to remove mass and $cos\theta*$
-   dependence
-   \end{itemize}
-\end{frame}
-
-\begin{frame}{Other Variables 1}
-    \includegraphics[width=\textwidth]{fig/variables_id_c1_123_all}
-\end{frame}
-
-\begin{frame}{Other Variables 2}
-    \includegraphics[width=\textwidth]{fig/variables_id_c2_123_all.pdf}
-\end{frame}
-
-\begin{frame}{Other Variables}
+\begin{frame}{Optimisation of BDTs}
   \begin{columns}[c]
   \column{.5\textwidth}
   \begin{itemize}
-    \item $P_{T}$ spectra do not show much separation after reweighting
-    \item Table on the right ranks the ``separation'' between signal and
-    background for the input variables
-    \begin{itemize}
-      \item 0 signal and background are identical
-      \item 1 signal and background do not overlap
-    \end{itemize}
-    \item $P_{T}^{Higgs}$ and $\Delta \phi$ are the next best sensetive
-    variables.
+    \item Plot shows the BDT output for the training and testing samples
   \end{itemize}
   \column{.5\textwidth}
-  \tiny{
-  \begin{center}
-    \begin{tabular}{ l | l | l } \hline
-        Rank & Variable                     & Separation\\
-        \hline
-        1 & $\sigma M / M                 $ & 3.908e-02\\
-        2 & $P_{T}^{Higgs}/M_{H}         $ & 1.647e-02\\
-        3 & $\Delta \phi                 $ & 1.243e-02\\
-        4 & $P_{T}^{lead} / M_{H}        $ & 1.208e-02\\
-        5 & $max(\eta^{lead},\eta^{sub.})$ & 1.145e-02\\
-        6 & $\eta^{lead}                 $ & 1.112e-02\\
-        7 & $\eta^{Higgs}                $ & 1.070e-02\\
-        8 & $\eta^{sublead}              $ & 9.908e-03\\
-        9 & $P_{T}^{sublead} / M_{H}     $ & 9.050e-03\\
-       10 & $min(r9^{lead},r9^{sub.})    $ & 8.690e-03\\
-       11 & $cos(\theta)*                $ & 4.375e-03\\
-       12 & $\Delta M / M_{Hypth}.        $ & 3.250e-03\\
-       \hline
-    \end{tabular}
-  \end{center}
-  }
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Performance}
-  \begin{columns}[c]
-  \column{.5\textwidth}
-  \begin{itemize}
-    \item Studied performance of BDT trained with 
-    \begin{itemize}
-      \item only Mass, Res and $cos\theta*$ 
-      \item Mass, Resolution, $cos\theta*$ and $P_T^{Higgs}$
-      \item BDT trained with usual variables
-    \end{itemize}
-    \item Plot shows signal efficiency versus background rejection
-  \end{itemize}
-  \column{.5\textwidth}
-    \includegraphics[width=\textwidth]{fig/rejBvsS}
+    %\includegraphics[width=\textwidth]{fig/rejBvsS}
   \end{columns}
 \end{frame}
 
