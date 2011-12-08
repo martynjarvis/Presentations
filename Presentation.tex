@@ -14,45 +14,82 @@
 %   \tableofcontents
 % \end{frame}
 
-\begin{frame}{Optimisation of BDTs}
+\begin{frame}{3 New Variables}
   \begin{itemize}  
-   \item Optimise choice of NTrees, Depth, Shrinkage, etc
-   \item In latest TMVA, optimise BDT parameters
-   \item I use a Genetic Algorithm to maximise the FOM
-   \item FOM chosen is integral of signal eff backround rej curve
+   \item Added 3 new variables in to training:
+   \begin{itemize}  
+     \item $\sigma M_{Correct Vertex} / M$
+     \item $\sigma M_{Wrong Vertex} / M$
+     \item $P_{vertex} =  1.-0.49*(evtmva+1.0)$
    \end{itemize}
+   \item Removed variables:
+   \begin{itemize}  
+     \item $\sigma M / M$ 
+     \item $Max(\eta_1,\eta_2)$
+     \item $Min(r9_1,r9_2)$
+   \end{itemize}
+ \end{itemize}
 \end{frame}
 
-\begin{frame}{Optimisation of BDTs}
+\begin{frame}{$\sigma M / M$}
   \begin{columns}[c]
   \column{.5\textwidth}
-  \begin{itemize}
-    \item Plot shows the best FOM value found in each generation
-  \end{itemize}
+    %cor vertex input plot
+    %\includegraphics[width=\textwidth]{fig/rejBvsS}
   \column{.5\textwidth}
+    %wrong vertex input plot
     %\includegraphics[width=\textwidth]{fig/rejBvsS}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Optimisation of BDTs}
+\begin{frame}{$P_{Vertex}$}
+    % p vertex input variable plot
+    %\includegraphics[width=\textwidth]{fig/rejBvsS}
+\end{frame}
+
+\begin{frame}{BDT output}
+    % p vertex input variable plot
+    %\includegraphics[width=\textwidth]{fig/rejBvsS}
+\end{frame}
+
+\begin{frame}{Limit Plot}
   \begin{columns}[c]
   \column{.5\textwidth}
-  \begin{itemize}
-    \item Plot shows the signal eff background rej curve for the previous
-    training and the new optimised
-  \end{itemize}
+   \begin{itemize}  
+     \item Conclusions
+   \end{itemize}
   \column{.5\textwidth}
+    % Limit Plot
     %\includegraphics[width=\textwidth]{fig/rejBvsS}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Optimisation of BDTs}
+
+\begin{frame}{Removing Mass from the BDT}
+ \begin{itemize}  
+   \item I removed the mass from the BDT
+   \item Use output of 5 variables BDT as input to a likelihood with mass
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Likelihood Inputs}
+    % Likelihood inputs 
+    %\includegraphics[width=\textwidth]{fig/rejBvsS}
+\end{frame}
+
+\begin{frame}{Likelihood Outputs}
+    % Likelihood Outputs
+    %\includegraphics[width=\textwidth]{fig/rejBvsS}
+\end{frame}
+
+\begin{frame}{Limit Plot}
   \begin{columns}[c]
   \column{.5\textwidth}
-  \begin{itemize}
-    \item Plot shows the BDT output for the training and testing samples
-  \end{itemize}
+   \begin{itemize}  
+     \item Conclusions
+   \end{itemize}
   \column{.5\textwidth}
+    % Limit Plot
     %\includegraphics[width=\textwidth]{fig/rejBvsS}
   \end{columns}
 \end{frame}
