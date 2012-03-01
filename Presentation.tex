@@ -1,4 +1,4 @@
-\documentclass[t]{beamer}
+\documentclass[t, 8pt]{beamer}
 \usetheme{iclpt}
 \usepackage{url}
 
@@ -10,13 +10,145 @@
 %   \titlepage
 % \end{frame}
 
-% \begin{frame}{Outline}
-%   \tableofcontents
-% \end{frame}
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
 
-\begin{frame}{3 New Variables}
+\section{Removing Mass from the BDT}
+\begin{frame}{Removing Mass from the BDT}
+\end{frame}
+
+\begin{frame}{Removing Mass from the BDT}
   \begin{itemize}  
-   \item Added 3 new variables in to training:
+  \item Pull back a little from the fully aggressive approach and instead focus on the background modelling aspect.
+  \item Used a likelihod method with two inputs:
+  \begin{itemize}  
+    \item Output of a BDT trained with out the mass as an input. Here the MIT
+    bdt weights are used.
+    \item $\Delta M/M$ variable
+  \end{itemize}
+  \item Produces a single variable and allows for our background modeling approach.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Likelihood Inputs}
+\begin{center}
+    % Likelihood inputs 
+    \includegraphics[width=\textwidth]{fig/likelihood_input}
+\end{center}
+\end{frame}
+
+\begin{frame}{Likelihood Outputs}
+\begin{center}
+    % Likelihood Outputs
+    \includegraphics[width=0.75\textwidth]{fig/likelihood_output}
+\end{center}
+\end{frame}
+
+\begin{frame}{Limit Plot}
+\begin{center}
+    % Limit Plot
+    \includegraphics[width=0.75\textwidth]{fig/limit_likelihood}
+\end{center}
+\end{frame}
+
+\begin{frame}{Conclusions}
+
+  \begin{itemize}  
+  \item Correlations between Delta M Over M and BDT output
+  \item Might not be a huge effect with a $2 \%$ mass window
+  \item Could be taken in to account using a second BDT instead of a likelihood
+  method
+  \end{itemize}
+\end{frame}
+
+\section{Thoughts about Input Variables}
+
+\begin{frame}{Thoughts about Input Variables}
+  \begin{itemize}  
+    \item The variables we use can be split in to 3 categories:
+    \begin{itemize}  
+      \item variables that contain information about the production mechanism
+      \item variables that contain information about the decay 
+      \item variables that contain information about the reconstruction of the
+      event
+    \end{itemize}
+    \item Some variables combine information from different categories ($\delta
+    \phi$)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Production Mechanism}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}  
+    \item There are three main production mechanisms for Higgs at high energy
+    proton proton colliders:
+    \begin{itemize}  
+      \item Gluon Fusion
+      \item Vector Boson Fusion
+      \item Asociative Production
+    \end{itemize}
+    \item The variables that contain information about the production mechanism will be
+    the variables that fully describe the information about the reconstructed Higgs,
+    the Eta and the PT.  
+    \item Studied these two variables for each production mechanism
+    \item Signal MC samples are reweighted to remove the dependence on eta when
+    studying PT and vice versa.
+    \item Signal MC has been reweighted to remove dependence on Mass
+  \end{itemize}
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/production}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Gluon Fusion}
+  \begin{itemize}  
+    \item Expect Higgs to be more central than background. 
+  \end{itemize}
+    % higgs eta and higgs pt
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{fig/gluglu_eta}
+    \includegraphics[width=0.45\textwidth]{fig/gluglu_pt}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Vector Boson Fusion}
+  \begin{itemize}  
+    \item Again Expect Higgs to be more central than background. 
+    \item Expect Higgs to be produced with higher PT due to recoil from the
+    boson in the production.
+  \end{itemize}
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{fig/vbf_eta}
+    \includegraphics[width=0.45\textwidth]{fig/vbf_pt}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Decay Mechanism}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}  
+    \item Signal MC has been reweighted to remove dependence on Mass
+    \item $\cos \theta \ast $
+    \begin{itemize}  
+      \item Defined as 
+      \begin{equation}
+      \cos \theta \ast = | E^{lead}-E^{sublead} | / P^{Higgs}
+      \end{equation}
+    \end{itemize}  
+  \end{itemize}
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/costhetastar}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Event Reconstruction Variables}
+ \begin{columns}[c]
+ \column{.5\textwidth}
+ \begin{itemize}  
+   \item Variables that categorise the events
+   \item 3 new variables studied
    \begin{itemize}  
      \item $\sigma M_{Correct Vertex} / M$
      \item $\sigma M_{Wrong Vertex} / M$
@@ -29,69 +161,73 @@
      \item $Min(r9_1,r9_2)$
    \end{itemize}
  \end{itemize}
+ \column{.5\textwidth}
+    % Limit Plot
+    % p vertex input variable plot
+    \includegraphics[width=\textwidth]{fig/vtx_prob}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{$\sigma M / M$}
   \begin{columns}[c]
   \column{.5\textwidth}
-    %cor vertex input plot
-    %\includegraphics[width=\textwidth]{fig/rejBvsS}
+    \includegraphics[width=\textwidth]{fig/sigmaMcorrect}
   \column{.5\textwidth}
-    %wrong vertex input plot
-    %\includegraphics[width=\textwidth]{fig/rejBvsS}
+    \includegraphics[width=\textwidth]{fig/sigmaMwrong}
   \end{columns}
 \end{frame}
 
-\begin{frame}{$P_{Vertex}$}
-    % p vertex input variable plot
-    %\includegraphics[width=\textwidth]{fig/rejBvsS}
+\begin{frame}{Conclusions}
+
+  \begin{itemize}  
+  \item Justified in including the Higgs PT and eta in to the training.
+  \item Cos Theta Star offers good separation over.
+  \item Others need to be studied in more detail.
+  \end{itemize}
 \end{frame}
+
+\begin{frame}{Backup} 
+
+
+\end{frame}
+
+
+\begin{frame}{Limit with New Variables} 
+\begin{center}
+    % p vertex input variable plot
+    \includegraphics[width=\textwidth]{fig/limit_sm_Asymptotic_ratio_var3}
+\end{center}
+\end{frame}
+
+\begin{frame}{Limit with Likelihood} 
+\begin{center}
+    % p vertex input variable plot
+    \includegraphics[width=\textwidth]{fig/limit_sm_Asymptotic_ratio_likelihood}
+\end{center}
+\end{frame}
+
+\begin{frame}{Likelihood Correlations}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/CorrelationMatrixS_123_all}
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/CorrelationMatrixB_123_all}
+  \end{columns}
+\end{frame}
+
 
 \begin{frame}{BDT output}
+\begin{center}
     % p vertex input variable plot
-    %\includegraphics[width=\textwidth]{fig/rejBvsS}
+    \includegraphics[width=0.75\textwidth]{fig/overtrain_3var}
+\end{center}
 \end{frame}
 
 \begin{frame}{Limit Plot}
-  \begin{columns}[c]
-  \column{.5\textwidth}
-   \begin{itemize}  
-     \item Conclusions
-   \end{itemize}
-  \column{.5\textwidth}
+\begin{center}
     % Limit Plot
-    %\includegraphics[width=\textwidth]{fig/rejBvsS}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}{Removing Mass from the BDT}
- \begin{itemize}  
-   \item I removed the mass from the BDT
-   \item Use output of 5 variables BDT as input to a likelihood with mass
- \end{itemize}
-\end{frame}
-
-\begin{frame}{Likelihood Inputs}
-    % Likelihood inputs 
-    %\includegraphics[width=\textwidth]{fig/rejBvsS}
-\end{frame}
-
-\begin{frame}{Likelihood Outputs}
-    % Likelihood Outputs
-    %\includegraphics[width=\textwidth]{fig/rejBvsS}
-\end{frame}
-
-\begin{frame}{Limit Plot}
-  \begin{columns}[c]
-  \column{.5\textwidth}
-   \begin{itemize}  
-     \item Conclusions
-   \end{itemize}
-  \column{.5\textwidth}
-    % Limit Plot
-    %\includegraphics[width=\textwidth]{fig/rejBvsS}
-  \end{columns}
+    \includegraphics[width=0.75\textwidth]{fig/limit_var3}
+\end{center}
 \end{frame}
 
 \end{document}
