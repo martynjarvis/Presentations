@@ -3,7 +3,7 @@
 \usepackage{url}
 
 \author{Martyn Jarvis}
-\title[Input Variables]{How to Select Input Variables}
+\title[TMVA Differnces]{TMVA Differences}
 
 \begin{document}
 % \begin{frame}
@@ -14,90 +14,79 @@
   %\tableofcontents
 %\end{frame}
 
-\begin{frame}{Full BDT}
-  \begin{itemize}  
-  \item Full BDT with mass
-  \item Variables used:
-  \begin{itemize}  
-    \item $P_T^{\gamma 1} / M_{\gamma \gamma}$
-    \item $P_T^{\gamma 2} / M_{\gamma \gamma}$
-    \item $\eta^{\gamma 1}$
-    \item $\eta^{\gamma 2}$
-    \item $ID MVA^{\gamma 1}$
-    \item $ID MVA^{\gamma 2}$
-    \item $\cos( \delta \phi )$
-    \item $Vtx Probability$
-    \item $\sigma(correct ~vtx)/M$
-    \item $\sigma(wrong ~vtx)/M$
-    \item \alert{$\Delta M/M$ variable}
-  \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{BDT Outputs}
-  \begin{columns}[c]
-  \column{.4\textwidth}
-  \begin{itemize}
-    \item Overtrained (this is a preliminary study)
-    \item Trained with a new version of TMVA.
-    \item Gives a smoother output distribution and a better separation of
-    background and signal
-    \item Not sure what has changed within TMVA to cause this.
-  \end{itemize}
-  \column{.6\textwidth}
-    \includegraphics[width=\textwidth]{fig/overtrain_full}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}{Rebinned BDT Outputs}
-  \begin{columns}[c]
-  \column{.4\textwidth}
-  \begin{itemize}
-    \item Added a cut of -0.05 on BDT output
-    \item Equivilent to the 0.05 cut in the ``other'' BDT method
-  \end{itemize}
-  \column{.6\textwidth}
-    Soon...
-    %\includegraphics[width=\textwidth]{fig/InvMassPlot}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Limit Plot}
-\begin{center}
-Soon...
-    % Limit Plot
-    %\includegraphics[width=0.75\textwidth]{fig/limit_likelihood}
-\end{center}
-\end{frame}
-
-\begin{frame}{Things to Do}
-  \begin{itemize}  
-  \item Calculate limit (Ran out of time, but I have workspace)
-  \item What causes the difference between the TMVA Versions
-  \item Further optimisation of TMVA parameters
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Backup}
-\end{frame}
-
-\begin{frame}{TMVA Versions}
+\begin{frame}{TMVA Differences Reminder}
   \begin{columns}[c]
   \column{.5\textwidth}
     \includegraphics[width=\textwidth]{fig/overtrain_full}
+    
+    Gradient Boost TMVA 4.0.7
   \column{.5\textwidth}
     \includegraphics[width=\textwidth]{fig/overtrain_old}
+    
+    Gradent Boost TMVA 4.1.2
   \end{columns}
 \end{frame}
 
-\begin{frame}{Efficiency plot}
-\begin{center}
-    % Limit Plot
-    \includegraphics[width=0.75\textwidth]{fig/efficiency}
-\end{center}
+\begin{frame}[fragile]{TMVA changes from 4.0.7 to 4.1.2}
+  \begin{itemize}  
+  \item Two major changes that could affect the output:
+  \begin{itemize}  
+    \item Default parameters change
+    \begin{verbatim}
+    http://sourceforge.net/mailarchive/message.php?msg_id=28001973
+    \end{verbatim}
+    \item Bug involving UseBaggedGrad
+    \begin{verbatim}
+    http://sourceforge.net/mailarchive/message.php?msg_id=27180819
+    \end{verbatim}
+  \end{itemize}
+  \end{itemize}
 \end{frame}
 
+\begin{frame}{Default parameters}
+  \begin{columns}[c]
+  \column{.4\textwidth}
+  \begin{itemize}
+    \item Undocumented...
+    \item Various parameters have their defualt values changed.
+    \item Not what specific parameter has changed to improve the results so much
+  \end{itemize}
+  \column{.6\textwidth}
+    % Set parameted to be the same
+    \includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
 
+\begin{frame}{UseBaggedGrad Bug}
+  \begin{columns}[c]
+  \column{.4\textwidth}
+  \begin{itemize}
+    \item UseBaggedGrad - randomize the training by using only a subset of the
+    data when growing each new decision tree.
+    \item Increases robustness...
+    \item Bug caused it to select the same subset every time. 
+    \item Therefore we trained the classifier on a smaller dataset.
+    \item Less discrimination power, more overtraining...
+  \end{itemize}
+  \column{.6\textwidth}
+    % remove usebaggedgrad option
+    \includegraphics[width=\textwidth]{fig/overtrain_old_no_bagging}
+  \end{columns}
+\end{frame}
+
+%\begin{frame}{Prevelance in other BDTs}
+  %\begin{itemize}  
+  %\item Affected BDTs will be
+  %\begin{itemize}
+    %\item Trained with TMVA version < 4.1.0
+    %\item Use gradient boosting
+    %\item UseBaggedGrad == True
+  %\end{itemize}
+  %\item Affected BDTs
+  %\begin{itemize}
+    %\item 
+  %\end{itemize}
+  %\end{itemize}
+%\end{frame}
 
 \end{document}

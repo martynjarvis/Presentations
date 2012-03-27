@@ -12,7 +12,7 @@ show: $(OUTPUT).pdf
 	evince $(OUTPUT).pdf
 
 clean:
-	rm *.toc *.aux *.log *.lof *.bib *.bbl *.blg *.dvi *.out *.nav *.snm
+	-rm *.toc *.aux *.log *.lof *.bib *.bbl *.blg *.dvi *.out *.nav *.snm *.vrb
 
 cleanall:
-	rm *.toc *.aux *.pdf *.ps *.eps *.log *.lof *.bib *.bbl *.blg *.dvi *.out *.nav *.snm
+	-rm *.toc *.aux *.pdf *.ps *.eps *.log *.lof *.bib *.bbl *.blg *.dvi *.out *.nav *.snm
