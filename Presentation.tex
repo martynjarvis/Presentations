@@ -1,47 +1,92 @@
-\documentclass[t]{beamer}
+\documentclass[t, 8pt]{beamer}
 \usetheme{iclpt}
 \usepackage{url}
 
-\author{IC H2G group}
-\title[IC ntuple production]{IC ntuple production}
+\author{Martyn Jarvis}
+\title[TMVA Differnces]{TMVA Differences}
 
 \begin{document}
 % \begin{frame}
 %   \titlepage
 % \end{frame}
 
-% \begin{frame}{Outline}
-%   \tableofcontents
-% \end{frame}
+%\begin{frame}{Outline}
+  %\tableofcontents
+%\end{frame}
 
-\begin{frame}{TITLE}
-  \begin{itemize}  
-   \item BULLET 1
-   \item BULLET 2 
-   \item  \alert{BULLET ALERT}
-   \end{itemize}
-\end{frame}
-
-\section{SECTION 1}
-
-\begin{frame}{Figure}
-  \begin{center}
-%       \includegraphics[width=0.9\textwidth]{fig/filelist}
-  \end{center}
-\end{frame}
-
-\begin{frame}{h2gglobe Analysis}
-  \begin{columns}[c] 
+\begin{frame}{TMVA Differences Reminder}
+  \begin{columns}[c]
   \column{.5\textwidth}
-  \begin{itemize}  
-   \item COL 1
-   \item COL 1
-   \item COL 1
-   \end{itemize}
-  \column{.5\textwidth} 
-    %\includegraphics[width=\textwidth]{fig/InvMassPlot}
+    \includegraphics[width=\textwidth]{fig/overtrain_full}
+    
+    Gradient Boost TMVA 4.0.7
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/overtrain_old}
+    
+    Gradent Boost TMVA 4.1.2
   \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{TMVA changes from 4.0.7 to 4.1.2}
+  \begin{itemize}  
+  \item Two major changes that could affect the output:
+  \begin{itemize}  
+    \item Default parameters change
+    \begin{verbatim}
+    http://sourceforge.net/mailarchive/message.php?msg_id=28001973
+    \end{verbatim}
+    \item Bug involving UseBaggedGrad
+    \begin{verbatim}
+    http://sourceforge.net/mailarchive/message.php?msg_id=27180819
+    \end{verbatim}
+  \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Default parameters}
+  \begin{columns}[c]
+  \column{.4\textwidth}
+  \begin{itemize}
+    \item Undocumented...
+    \item Various parameters have their defualt values changed.
+    \item Not what specific parameter has changed to improve the results so much
+  \end{itemize}
+  \column{.6\textwidth}
+    % Set parameted to be the same
+    \includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{UseBaggedGrad Bug}
+  \begin{columns}[c]
+  \column{.4\textwidth}
+  \begin{itemize}
+    \item UseBaggedGrad - randomize the training by using only a subset of the
+    data when growing each new decision tree.
+    \item Increases robustness...
+    \item Bug caused it to select the same subset every time. 
+    \item Therefore we trained the classifier on a smaller dataset.
+    \item Less discrimination power, more overtraining...
+  \end{itemize}
+  \column{.6\textwidth}
+    % remove usebaggedgrad option
+    \includegraphics[width=\textwidth]{fig/overtrain_old_no_bagging}
+  \end{columns}
+\end{frame}
+
+%\begin{frame}{Prevelance in other BDTs}
+  %\begin{itemize}  
+  %\item Affected BDTs will be
+  %\begin{itemize}
+    %\item Trained with TMVA version < 4.1.0
+    %\item Use gradient boosting
+    %\item UseBaggedGrad == True
+  %\end{itemize}
+  %\item Affected BDTs
+  %\begin{itemize}
+    %\item 
+  %\end{itemize}
+  %\end{itemize}
+%\end{frame}
 
 \end{document}
