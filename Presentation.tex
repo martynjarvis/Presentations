@@ -22,29 +22,20 @@
   \begin{itemize}
     \item In pp collisions, more W+ are expected than W- due to the excess of u valence quarks wrt d quarks.
     \item An asymmetry measurement as a function of boson rapidity can be used to constrain PDFs.
-    \item LHC is exploring a new region in the x,Q2 plane
-    \item The inclusive charge ratio measured by CMS to be $1.43 \pm 0.04$ in agreement with MSTW PDF predictions
-  \end{itemize}
-  \column{.5\textwidth}
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Motivation}
-  \begin{columns}[c]
-  \column{.5\textwidth}
-  \begin{itemize}
     \item Boson rapidity is not directly accessible
     \item Direct accessible measurement is the lepton charge asymmetry
+  \end{itemize}
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/rapidity}
+  \end{columns}
+
     \begin{equation}
     A_{th}(\eta) = \frac{\frac{d\sigma}{d\eta}(W^{+}\to e^{+}\nu_{e}) - \frac{d\sigma}{d\eta}(W^{-}\to e^{-}\nu_{e})}
                         {\frac{d\sigma}{d\eta}(W^{+}\to e^{+}\nu_{e}) + \frac{d\sigma}{d\eta}(W^{-}\to e^{-}\nu_{e})}
     \end{equation}
+  \begin{itemize}
     \item This asymmetry is given by the combination of the W production asymmetry and the well understood parity violation asymmetry in the W decay.
   \end{itemize}
-  \column{.5\textwidth}
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
-  \end{columns}
 \end{frame}
 
 \section{History}
@@ -53,31 +44,34 @@
   \begin{columns}[c]
   \column{.5\textwidth}
   \begin{itemize}
-    \item 
+    \item Previous CMS measurement with the full 2010 dataset of $36 pb^{-1}$ in both electron and muon channel (right)
+    \item Muon channel measurement using $??pb^{-1}$ of 2011 dataset
+    \item Lepton charge asymmetry and W charge asymmetry also been studied at Tevatron experiments, ATLAS and LHCb
+    \item This measurement has been performed with $840pb^{-1}$ of data from the 2011 dataset.
   \end{itemize}
   \column{.5\textwidth}
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+    \includegraphics[width=\textwidth]{fig/asym_2010}
   \end{columns}
 \end{frame}
 
-\section{LHC Performance}
+%\section{LHC Performance}
 
-\begin{frame}{LHC Performance in 2011}
-  \begin{columns}[c]
-  \column{.5\textwidth}
-  \begin{itemize}
-    \item 
-  \end{itemize}
-  \column{.5\textwidth}
+
+%\begin{frame}{LHC Performance in 2011}
+  %\begin{columns}[c]
+  %\column{.5\textwidth}
+  %\begin{itemize}
+  %\end{itemize}
+  %\column{.5\textwidth}
+    %%\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  %\end{columns}
+%\end{frame}
+
+%\section{CMS Detector}
+
+%\begin{frame}{CMS Detector}
     %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
-  \end{columns}
-\end{frame}
-
-\section{CMS Detector}
-
-\begin{frame}{CMS Detector}
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
-\end{frame}
+%\end{frame}
 
 \section{Analysis}
 
@@ -92,26 +86,25 @@
     \end{itemize}
     \item Background contributions,
     \begin{itemize}
-      \item EWK background ( $W \to e\nu$, Drell-Yan)
+      \item EWK background ( $W \to \tau\nu$, Drell-Yan)
       \item $t\bar{t}$ background
       \item QCD background (multi-jet, photon+jet)
     \end{itemize}
     %\item Lepton pT> 35 GeV (limit set by single electron trigger) 
     \item The number of the electron / positron is extracted from a extended binned likelihood fit of the MET distribution
-    \item 11 bin in $|\eta|$
+    \item 11 bins in $|\eta|$
     \begin{itemize}
-      \item  $[0-0.2], [0.2-0.4], [0.4-0.6],
-      [0.6-0.8], [0.8-1.0], [1.0-1.2], [1.2-1.4], [1.6-1.8], [1.8-2.0],
-      [2.0-2.2], [2.2-2.4]$
+      %\item  $[0-0.2], [0.2-0.4], [0.4-0.6], [0.6-0.8], [0.8-1.0], [1.0-1.2], [1.2-1.4], [1.6-1.8], [1.8-2.0], [2.0-2.2], [2.2-2.4]$
+      \item $0.0 < |\eta| < 2.4$ in bin widths of 0.2
       \item $[1.4-1.6]$ bin excluded because of the transition region between Ecal Barrel and Ecal Endcap
     \end{itemize}
   \end{itemize}
   \column{.5\textwidth}
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+    \includegraphics[width=\textwidth]{fig/wenu_event}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Electron Selection}
+\begin{frame}{Event Selection}
   \begin{columns}[c]
   \column{.5\textwidth}
   \begin{itemize}
@@ -136,57 +129,101 @@
   \end{itemize}
   \column{.5\textwidth}
     %table of cuts
+    \tiny{
+  \begin{center}
+  \begin{table}[htbp]
+    \begin{tabular}{|lcc|} \hline
+      \multicolumn{1}{|c}{Variable} & \multicolumn{1}{c}{cut value (barrel)}& \multicolumn{1}{c|}{cut value (endcap)}\\
+        \hline   \hline
+       \multicolumn{3}{|l|}{ID Cuts}\\ \hline
+        H/E & 0.04 & 0.025 \\
+        $\Delta\phi$ & 0.06 & 0.03 \\
+        $\Delta\eta$ & 0.004 & 0.007  \\
+        $\sigma_{\eta\eta}$ & 0.01 & 0.03 \\ \hline
+      \multicolumn{3}{|l|}{Isolation Cuts}\\ \hline
+       $ISO_{trk} / E_T $  & 0.09 & 0.04 \\
+       $ISO_{ecal}/ E_T$  & 0.07 & 0.05 \\
+       $ISO_{hcal}/ E_T$  & 0.10 & 0.025 \\ \hline
+      \multicolumn{3}{|l|}{Conversion Rejection Cuts}\\ \hline
+       Missing Hits  & \multicolumn{2}{c|}{$\leq 0$}\\
+       Dist $||$ Dcot   & \multicolumn{2}{c|}{$>0.02$}\\
+      \hline
+    \end{tabular}
+   % \caption{\label{tab:elecuts} Electron selection variables and corresponding cut values.}
+ \end{table}
+
+
+
     %table with 
+    \begin{tabular}{|l|r|}
+    \hline
+    & $P_{T}>35$ GeV \\ \hline
+    $W\to e\nu$  & 76.2$\%$\\\hline
+    QCD Background       & 16.0$\%$\\\hline
+    EWK Total Background & 7.8$\%$ \\
+    EWK DYtautau         & 0.2$\%$  \\
+    EWK DYee             & 6.4$\%$  \\
+    EWK Wtaunu           & 0.8$\%$ \\
+    EWK ttbar            & 0.4$\%$ \\\hline
+    \end{tabular}
+  \end{center}
+  }
+
     %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Electron Results}
-  \begin{columns}[c]
-  \column{.5\textwidth}
+\begin{frame}{Selected Events}
+  %\begin{columns}[c]
+  %\column{.5\textwidth}
   \begin{itemize}
     \item Apply electron selection, then extended binned maximum likelihood fit to the MET distribution for electrons and positrons separatly
     \item Static template shapes:
     \begin{itemize}
-      \item Signal + EWK backgrounds : MC + correction from Z to ll recoil in data 
+      \item Signal + EWK backgrounds : MC + correction from $Z \to ee$ recoil in data 
       \item QCD shape is determined using a signal-free control sample obtained by inverting a subset of the electron id criteria
     \end{itemize}
   \end{itemize}
-  \column{.5\textwidth}
+  %\column{.5\textwidth}
     % FIT here
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
-  \end{columns}
+    \begin{center}
+      \includegraphics[width=0.8\textwidth]{fig/fit}
+    \end{center}
+  %\end{columns}
 \end{frame}
 
 \section{Systematics}
 
 \begin{frame}{Systematics and Corrections}
-  \begin{columns}[c]
-  \column{.5\textwidth}
   \begin{itemize}
     \item Four main sources of systematic uncertainty in both channels:
     \begin{itemize}
       \item Signal estimation method
       \item Rate of lepton charge misassignment
-      \item Relative efficiencies between l+ and l−
+      \item Relative efficiencies between $e^{+}$ and $e^{-}$
       \item Lepton momentum (energy) scale and resolution
     \end{itemize}
   \end{itemize}
-  \column{.5\textwidth}
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
-  \end{columns}
 \end{frame}
 
 \begin{frame}{Signal Extraction Method}
-  \begin{columns}[c]
-  \column{.5\textwidth}
   \begin{itemize}
     \item Systematic uncertainties evaluated by varying the shapes used in the fits
-    \item Measured the effect of changing EWK and top backgrounds
-  \end{itemize}
-  \column{.5\textwidth}
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
-  \end{columns}
+    \item Signal Shape
+    \begin{itemize}
+      \item Uncertainty in the recoil correction
+      \item Theoretical input to the recoil due to PDF uncertainty
+    \end{itemize}
+    \item QCD Shape
+    \begin{itemize}
+      \item Anti-selection was varied to study the effect on the fit. 
+    \end{itemize}
+    \item EWK Shape
+    \begin{itemize}
+      \item The relative normalizaton of the $Z \to ee$, $W \to \tau\nu$,
+      $t\bar{t}$, is modified by $20\%$
+    \end{itemize}
+ \end{itemize}
 \end{frame}
 
 \begin{frame}{Corrections}
@@ -207,20 +244,25 @@
         \item Measured with tag and probe.
         \item Systematic error (energy scale and signal shape) cancel out in the ratio R, only the statistical error is propagated to R
       \end{itemize}
+      \begin{center}
       \begin{equation}
         \mathcal{A}_R=
           \frac{1}{1-2\omega}\frac{ \mathcal{A}_M\left(R+1\right) - \left(R-1\right)}{\left(R+1\right)-\mathcal{A}_M \left(R-1\right)}
           \simeq 
           \frac{1}{1-2\omega}\left(\mathcal{A}_M -\frac{\left(R-1\right)\left(1-\mathcal{A}_M^2\right)}{2}\right)
       \end{equation}
+      \end{center}
     \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Energy Scale and Resolution}
     \begin{itemize}
-      \item The electron energy resolution and scale can introduce a bias on the asymmetry, due to the effect of resolution for leptons with a transverse momentum close to Pt cut.
+      \item The electron energy resolution and scale can introduce a bias on the
+      asymmetry, due to the effect of resolution for leptons with a transverse
+      momentum close to $P_T$ cut.
       \item The correction factor has been evaluated by comparing the asymmetry at gen level and the asymmetry after simulating the particle-matter interaction
+      \item An additional data/mc correction is applied to account for differences between data and simulation
       \begin{equation}
       P_T^{sim} = P_T^{gen} \otimes Res^{MC} \otimes Res^{Data/MC}
       \end{equation}
@@ -235,13 +277,41 @@
 
 \begin{frame}{Summary of Systematic Uncertainties}
     %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \tiny{
+ \begin{center}
+   \begin{tabular}{l|cccc}
+      \hline\hline
+      &Signal & Energy & Charge &  Efficiency \\
+     & Yield & Scale and Res. & MisId. & Ratio \\ \hline
+      $0.0<|\eta|<0.2$ & 1.8 & 0.6 & 0.0 &  4.5 \\
+      $0.2<|\eta|<0.4$ & 2.5 & 0.6 & 0.0 &  4.4 \\
+      $0.4<|\eta|<0.6$ & 2.7 & 0.3 & 0.0 &  4.4 \\
+      $0.6<|\eta|<0.8$ & 2.5 & 0.3 & 0.0 &  4.4 \\
+      $0.8<|\eta|<1.0$ & 1.9 & 0.6 & 0.1 &  4.4 \\
+      $1.0<|\eta|<1.2$ & 2.4 & 1.0 & 0.1 &  4.9 \\
+      $1.2<|\eta|<1.4$ & 2.6 & 0.8 & 0.1 &  5.4 \\
+      $1.6<|\eta|<1.8$ & 3.1 & 0.8 & 0.1 &  9.2 \\
+      $1.8<|\eta|<2.0$ & 2.0 & 1.6 & 0.2 &  8.7 \\
+      $2.0<|\eta|<2.2$ & 2.0 & 2.6 & 0.3 & 10.0 \\
+      $2.2<|\eta|<2.4$ & 2.9 & 2.4 & 0.3 & 12.5 \\
+    \end{tabular}
+  \end{center} 
+  }
+
+  \column{.5\textwidth}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}{Results}
-  \begin{columns}[c]
+\begin{columns}[c]
+\column{.5\textwidth}
+
+
   \column{.5\textwidth}
-  \column{.5\textwidth}
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+    \includegraphics[width=\textwidth]{fig/powheg_results}
   \end{columns}
 \end{frame}
 
@@ -256,5 +326,68 @@
 
 \begin{frame}{Backup}
 \end{frame}
+
+\begin{frame}{Results}
+\tiny{
+\begin{center}
+\begin{tabular}{|l | c ||c |c |c |c|}
+\hline
+$|\eta|$ range  & Data & CTEQ & HERAPDF & MSTW & NNPDF  \\ \hline
+  $0.0<|\eta|<0.2$ &104$\pm$3$\pm$5 &$109^{+5}_{-5}$ &$106^{+4}_{-8}$ & $83^{+3}_{-5}$& 107$\pm$5\\
+  $0.2<|\eta|<0.4$ &114$\pm$3$\pm$5 &$114^{+5}_{-5}$ &$110^{+4}_{-8}$ & $85^{+3}_{-5}$& 110$\pm$5\\
+  $0.4<|\eta|<0.6$ &115$\pm$3$\pm$5 &$119^{+5}_{-5}$ &$115^{+4}_{-8}$ & $92^{+3}_{-5}$& 116$\pm$5\\
+  $0.6<|\eta|<0.8$ &125$\pm$3$\pm$5 &$126^{+5}_{-5}$ &$122^{+4}_{-8}$ & $98^{+3}_{-5}$& 123$\pm$5\\
+  $0.8<|\eta|<1.0$ &130$\pm$3$\pm$5 &$138^{+5}_{-6}$ &$132^{+4}_{-8}$ & $108^{+4}_{-5}$& 134$\pm$5\\
+  $1.0<|\eta|<1.2$ &138$\pm$3$\pm$6 &$146^{+6}_{-6}$ &$140^{+5}_{-8}$ & $120^{+4}_{-5}$&145$\pm$5 \\
+  $1.2<|\eta|<1.4$ &154$\pm$3$\pm$6 &$164^{+6}_{-7}$ &$153^{+5}_{-7}$ & $136^{+5}_{-5}$&158$\pm$5 \\
+  $1.6<|\eta|<1.8$ &169$\pm$3$\pm$10 &$195^{+8}_{-9}$ &$181^{+5}_{-5}$ & $168^{+5}_{-5}$&190$\pm$4 \\
+  $1.8<|\eta|<2.0$ &200$\pm$3$\pm$9 &$207^{+8}_{-10}$ &$196^{+4}_{-3}$ & $184^{+6}_{-5}$&206$\pm$4 \\
+  $2.0<|\eta|<2.2$ &224$\pm$3$\pm$11 &$224^{+8}_{-11}$ &$211^{+5}_{-3}$ & $198^{+6}_{-5}$&219$\pm$4 \\
+  $2.2<|\eta|<2.4$ &216$\pm$4$\pm$13 &$241^{+8}_{-12}$ &$225^{+9}_{-4}$ & $214^{+6}_{-5}$&231$\pm$5 \\ 
+\hline
+\end{tabular}
+\end{center}
+}
+\end{frame}
+
+\begin{frame}{Covariance Matrix}
+  \tiny{
+  \begin{center}
+    \begin{tabular}{l|ccccccccccc}
+& \scriptsize{$\left[0.0,0.2\right]$}
+& \scriptsize{$\left[0.2,0.4\right]$}
+& \scriptsize{$\left[0.4,0.6\right]$} 
+& \scriptsize{$\left[0.6,0.8\right]$}   
+& \scriptsize{$\left[0.8,1.0\right]$}
+& \scriptsize{$\left[1.0,1.2\right]$} 
+& \scriptsize{$\left[1.2,1.4\right]$}
+& \scriptsize{$\left[1.6,1.8\right]$}
+& \scriptsize{$\left[1.8,2.0\right]$} 
+& \scriptsize{$\left[2.0,2.2\right]$} 
+& \scriptsize{$\left[2.2,2.4\right]$} \\ \hline
+\scriptsize{$\left[0.0,0.2\right]$} & 23.7 & 2.6 & 2.2 & 2.5 & 2.7 & 2.9 & 2.9 & 2.9 & 2.8 & 3.1 & 4.2 \\
+\scriptsize{$\left[0.2,0.4\right]$} & 2.6 & 26.2 & 2.6 & 2.9 & 3.1 & 3.3 & 3.4 & 3.2 & 3.0 & 3.9 & 4.7 \\
+\scriptsize{$\left[0.4,0.6\right]$} & 2.2 & 2.6 & 26.6 & 2.6 & 2.8 & 2.9 & 3.2 & 2.9 & 2.5 & 3.3 & 4.1 \\
+\scriptsize{$\left[0.6,0.8\right]$} & 2.5 & 2.9 & 2.6 & 25.6 & 3.3 & 3.4 & 3.7 & 3.3 & 2.8 & 3.7 & 4.7 \\
+\scriptsize{$\left[0.8,1.0\right]$} & 2.7 & 3.1 & 2.8 & 3.3 & 23.3 & 3.9 & 4.2 & 3.7 & 3.4 & 4.6 & 5.6 \\
+\scriptsize{$\left[1.0,1.2\right]$} & 2.9 & 3.3 & 2.9 & 3.4 & 3.9 & 30.8 & 4.5 & 4.1 & 4.0 & 5.7 & 6.8 \\
+\scriptsize{$\left[1.2,1.4\right]$} & 2.9 & 3.4 & 3.2 & 3.7 & 4.2 & 4.5 & 36.5 & 4.3 & 3.7 & 5.8 & 6.7 \\
+\scriptsize{$\left[1.6,1.8\right]$} & 2.9 & 3.2 & 2.9 & 3.3 & 3.7 & 4.1 & 4.3 & 94.9 & 3.8 & 5.1 & 6.2 \\
+\scriptsize{$\left[1.8,2.0\right]$} & 2.8 & 3.0 & 2.5 & 2.8 & 3.4 & 4.0 & 3.7 & 3.8 & 82.4 & 6.2 & 7.0 \\ 
+\scriptsize{$\left[2.0,2.2\right]$} & 3.1 & 3.9 & 3.3 & 3.7 & 4.6 & 5.7 & 5.8 & 5.1 & 6.2 & 110.7 & 10.3 \\
+\scriptsize{$\left[2.2,2.4\right]$} & 4.2 & 4.7 & 4.1 & 4.7 & 5.6 & 6.8 & 6.7 & 6.2 & 7.0 & 10.3 & 171.0 \\
+    \end{tabular}
+  \end{center}
+  }
+\end{frame}
+
+\begin{frame}{Comparison to Theory}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/plotCarinoPowheg}
+  \end{columns}
+\end{frame}
+
 
 \end{document}
