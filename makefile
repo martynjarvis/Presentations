@@ -3,7 +3,7 @@
 INPUT  = Presentation
 #DATE   = `shell date "+%Y%m%d%" `
 DATE   = $(shell date "+%d%b")
-OUTPUT = master_mjarvis_$(DATE)
+OUTPUT = iop_mjarvis_$(DATE)
 
 $(OUTPUT).pdf: $(INPUT).tex
 	pdflatex -jobname $(OUTPUT) $(INPUT).tex

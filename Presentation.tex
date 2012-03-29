@@ -3,90 +3,258 @@
 \usepackage{url}
 
 \author{Martyn Jarvis}
-\title[TMVA Differnces]{TMVA Differences}
+\title[Electron Charge Asymmetry]{Electron Charge Asymmetry}
 
 \begin{document}
-% \begin{frame}
-%   \titlepage
-% \end{frame}
+\begin{frame}
+  \titlepage
+\end{frame}
 
-%\begin{frame}{Outline}
-  %\tableofcontents
-%\end{frame}
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
 
-\begin{frame}{TMVA Differences Reminder}
+\section{Introduction}
+
+\begin{frame}{Motivation}
   \begin{columns}[c]
   \column{.5\textwidth}
-    \includegraphics[width=\textwidth]{fig/overtrain_full}
-    
-    Gradient Boost TMVA 4.0.7
+  \begin{itemize}
+    \item In pp collisions, more W+ are expected than W- due to the excess of u valence quarks wrt d quarks.
+    \item An asymmetry measurement as a function of boson rapidity can be used to constrain PDFs.
+    \item LHC is exploring a new region in the x,Q2 plane
+    \item The inclusive charge ratio measured by CMS to be $1.43 \pm 0.04$ in agreement with MSTW PDF predictions
+  \end{itemize}
   \column{.5\textwidth}
-    \includegraphics[width=\textwidth]{fig/overtrain_old}
-    
-    Gradent Boost TMVA 4.1.2
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
   \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{TMVA changes from 4.0.7 to 4.1.2}
-  \begin{itemize}  
-  \item Two major changes that could affect the output:
-  \begin{itemize}  
-    \item Default parameters change
-    \begin{verbatim}
-    http://sourceforge.net/mailarchive/message.php?msg_id=28001973
-    \end{verbatim}
-    \item Bug involving UseBaggedGrad
-    \begin{verbatim}
-    http://sourceforge.net/mailarchive/message.php?msg_id=27180819
-    \end{verbatim}
-  \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Default parameters}
+\begin{frame}{Motivation}
   \begin{columns}[c]
-  \column{.4\textwidth}
+  \column{.5\textwidth}
   \begin{itemize}
-    \item Undocumented...
-    \item Various parameters have their defualt values changed.
-    \item Not what specific parameter has changed to improve the results so much
+    \item Boson rapidity is not directly accessible
+    \item Direct accessible measurement is the lepton charge asymmetry
+    \begin{equation}
+    A_{th}(\eta) = \frac{\frac{d\sigma}{d\eta}(W^{+}\to e^{+}\nu_{e}) - \frac{d\sigma}{d\eta}(W^{-}\to e^{-}\nu_{e})}
+                        {\frac{d\sigma}{d\eta}(W^{+}\to e^{+}\nu_{e}) + \frac{d\sigma}{d\eta}(W^{-}\to e^{-}\nu_{e})}
+    \end{equation}
+    \item This asymmetry is given by the combination of the W production asymmetry and the well understood parity violation asymmetry in the W decay.
   \end{itemize}
-  \column{.6\textwidth}
-    % Set parameted to be the same
-    \includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
   \end{columns}
 \end{frame}
 
-\begin{frame}{UseBaggedGrad Bug}
+\section{History}
+
+\begin{frame}{History}
   \begin{columns}[c]
-  \column{.4\textwidth}
+  \column{.5\textwidth}
   \begin{itemize}
-    \item UseBaggedGrad - randomize the training by using only a subset of the
-    data when growing each new decision tree.
-    \item Increases robustness...
-    \item Bug caused it to select the same subset every time. 
-    \item Therefore we trained the classifier on a smaller dataset.
-    \item Less discrimination power, more overtraining...
+    \item 
   \end{itemize}
-  \column{.6\textwidth}
-    % remove usebaggedgrad option
-    \includegraphics[width=\textwidth]{fig/overtrain_old_no_bagging}
+  \column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
   \end{columns}
 \end{frame}
 
-%\begin{frame}{Prevelance in other BDTs}
-  %\begin{itemize}  
-  %\item Affected BDTs will be
-  %\begin{itemize}
-    %\item Trained with TMVA version < 4.1.0
-    %\item Use gradient boosting
-    %\item UseBaggedGrad == True
-  %\end{itemize}
-  %\item Affected BDTs
-  %\begin{itemize}
-    %\item 
-  %\end{itemize}
-  %\end{itemize}
-%\end{frame}
+\section{LHC Performance}
+
+\begin{frame}{LHC Performance in 2011}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+  \column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\section{CMS Detector}
+
+\begin{frame}{CMS Detector}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+\end{frame}
+
+\section{Analysis}
+
+\begin{frame}{Analysis Overview}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item $W \to e\nu$ characterised by 
+    \begin{itemize}
+      \item High Pt lepton 
+      \item Missing transverse energy (MET) due to neutrino
+    \end{itemize}
+    \item Background contributions,
+    \begin{itemize}
+      \item EWK background ( $W \to e\nu$, Drell-Yan)
+      \item $t\bar{t}$ background
+      \item QCD background (multi-jet, photon+jet)
+    \end{itemize}
+    %\item Lepton pT> 35 GeV (limit set by single electron trigger) 
+    \item The number of the electron / positron is extracted from a extended binned likelihood fit of the MET distribution
+    \item 11 bin in $|\eta|$
+    \begin{itemize}
+      \item  $[0-0.2], [0.2-0.4], [0.4-0.6],
+      [0.6-0.8], [0.8-1.0], [1.0-1.2], [1.2-1.4], [1.6-1.8], [1.8-2.0],
+      [2.0-2.2], [2.2-2.4]$
+      \item $[1.4-1.6]$ bin excluded because of the transition region between Ecal Barrel and Ecal Endcap
+    \end{itemize}
+  \end{itemize}
+  \column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Electron Selection}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item Electron Selection:
+    \begin{itemize}
+      \item $P_T > 35 GeV$
+    \end{itemize}
+    \item Electron Identification
+    \begin{itemize}
+      \item Track cluster matching
+      \item Shower shape and H/E
+      \item Track, ECAL and HCAL isolation
+      \item Conversion rejection
+    \end{itemize}
+    \item Z veto
+    \begin{itemize}
+      \item 2nd lepton with $P_T > 15$ GeV
+    \end{itemize}
+    \item Require that all three methods of charge assignment agree to reduce
+    misassignment (Gaussian Sum Filter, Kalman Filter, Relative phi position of
+    cluster center and first tracker hit)
+  \end{itemize}
+  \column{.5\textwidth}
+    %table of cuts
+    %table with 
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Electron Results}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item Apply electron selection, then extended binned maximum likelihood fit to the MET distribution for electrons and positrons separatly
+    \item Static template shapes:
+    \begin{itemize}
+      \item Signal + EWK backgrounds : MC + correction from Z to ll recoil in data 
+      \item QCD shape is determined using a signal-free control sample obtained by inverting a subset of the electron id criteria
+    \end{itemize}
+  \end{itemize}
+  \column{.5\textwidth}
+    % FIT here
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\section{Systematics}
+
+\begin{frame}{Systematics and Corrections}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item Four main sources of systematic uncertainty in both channels:
+    \begin{itemize}
+      \item Signal estimation method
+      \item Rate of lepton charge misassignment
+      \item Relative efficiencies between l+ and l−
+      \item Lepton momentum (energy) scale and resolution
+    \end{itemize}
+  \end{itemize}
+  \column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Signal Extraction Method}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item Systematic uncertainties evaluated by varying the shapes used in the fits
+    \item Measured the effect of changing EWK and top backgrounds
+  \end{itemize}
+  \column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Corrections}
+  \begin{itemize}
+    \item To compare with the theoretical value, the measured lepton asymmetry has to be corrected for experimental effects:
+    \begin{itemize}
+      \item Charge mis-id $(\omega)$: 
+      \begin{itemize}
+        \item Introduces a dilution factor to the real asymmetry
+        \item Evaluated from the ratio same-sign / opposite-sign Z yield
+        %\item  $R_{ij}$=fraction of the same sign events with one electron in the η bin i and the other in the bin j
+        %\item From a simultaneous fit to the 66 values of $R_{ij}$, the value of $\omega$ is evaluated for each $\eta$ bin
+        \item Statistical error propogated to asymmetry as systematic error
+      \end{itemize}
+      \item Relative detection efficiency $(R = \epsilon^+/\epsilon^-)$ between electrons and positrons: 
+      \begin{itemize}
+        \item the detection efficiency is different for electrons and positrons and produces a bias in the measured asymmetry
+        \item Measured with tag and probe.
+        \item Systematic error (energy scale and signal shape) cancel out in the ratio R, only the statistical error is propagated to R
+      \end{itemize}
+      \begin{equation}
+        \mathcal{A}_R=
+          \frac{1}{1-2\omega}\frac{ \mathcal{A}_M\left(R+1\right) - \left(R-1\right)}{\left(R+1\right)-\mathcal{A}_M \left(R-1\right)}
+          \simeq 
+          \frac{1}{1-2\omega}\left(\mathcal{A}_M -\frac{\left(R-1\right)\left(1-\mathcal{A}_M^2\right)}{2}\right)
+      \end{equation}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Energy Scale and Resolution}
+    \begin{itemize}
+      \item The electron energy resolution and scale can introduce a bias on the asymmetry, due to the effect of resolution for leptons with a transverse momentum close to Pt cut.
+      \item The correction factor has been evaluated by comparing the asymmetry at gen level and the asymmetry after simulating the particle-matter interaction
+      \begin{equation}
+      P_T^{sim} = P_T^{gen} \otimes Res^{MC} \otimes Res^{Data/MC}
+      \end{equation}
+      \item where:
+      \begin{itemize} 
+        \item $P_T^{gen}$ is from resbos with CT10
+        \item $Res^{MC}$ is from a $(W\to e\nu)$ MC sample
+        \item $Res^{Data/MC}$ is from a residual data/MC correction 
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary of Systematic Uncertainties}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+\end{frame}
+
+\begin{frame}{Results}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Conclusion}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Backup}
+\end{frame}
 
 \end{document}
