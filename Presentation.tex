@@ -39,6 +39,21 @@ lv + X$ production @ $E_{cm} = 7$TeV}
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Motivation}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  \begin{itemize}
+    \item Lepton charge asymmetry and W charge asymmetry have been studied at Tevatron
+    \item Several authors have reported tension between the lepton charge asymmetry and PDF global fits
+    \item Current predictions for the asymmetry at the LHC do not agree
+  \end{itemize}
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/asym_theory}
+  \end{columns}
+\end{frame}
+
+
+
 \section{History}
 
 \begin{frame}{History}
@@ -46,13 +61,13 @@ lv + X$ production @ $E_{cm} = 7$TeV}
   \column{.5\textwidth}
   \begin{itemize}
     \item Previous CMS measurement with the full 2010 dataset of $36 pb^{-1}$ in both electron and muon channel (right)
-    \item Muon channel measurement using $??pb^{-1}$ of 2011 dataset
-    \item Lepton charge asymmetry and W charge asymmetry also been studied at Tevatron experiments, ATLAS and LHCb
+    \item Lepton charge asymmetry and W charge asymmetry also been studied at ATLAS and LHCb
+    \item Muon channel measurement using $234pb^{-1}$ of 2011 dataset
     \vspace{1cm}
     \item This new measurement has been performed with $840pb^{-1}$ of data from the 2011 dataset.
   \end{itemize}
   \column{.5\textwidth}
-    \includegraphics[width=\textwidth]{fig/asym_2010}
+    \includegraphics[width=\textwidth]{fig/2011_asym_combined}
   \end{columns}
 \end{frame}
 
@@ -113,6 +128,7 @@ lv + X$ production @ $E_{cm} = 7$TeV}
     \item Electron Selection:
     \begin{itemize}
       \item $P_T > 35 GeV$
+      \item Constrained by trigger
     \end{itemize}
     \item Electron Identification
     \begin{itemize}
@@ -133,26 +149,6 @@ lv + X$ production @ $E_{cm} = 7$TeV}
     %table of cuts
     \tiny{
   \begin{center}
-    \begin{table}[htbp]
-    \begin{tabular}{|lcc|} \hline
-      \multicolumn{1}{|c}{Variable} & \multicolumn{1}{c}{cut value (barrel)}& \multicolumn{1}{c|}{cut value (endcap)}\\
-        \hline   \hline
-       \multicolumn{3}{|l|}{ID Cuts}\\ \hline
-        H/E & 0.04 & 0.025 \\
-        $\Delta\phi$ & 0.06 & 0.03 \\
-        $\Delta\eta$ & 0.004 & 0.007  \\
-        $\sigma_{\eta\eta}$ & 0.01 & 0.03 \\ \hline
-      \multicolumn{3}{|l|}{Isolation Cuts}\\ \hline
-       $ISO_{trk} / E_T $  & 0.09 & 0.04 \\
-       $ISO_{ecal}/ E_T$  & 0.07 & 0.05 \\
-       $ISO_{hcal}/ E_T$  & 0.10 & 0.025 \\ \hline
-      \multicolumn{3}{|l|}{Conversion Rejection Cuts}\\ \hline
-       Missing Hits  & \multicolumn{2}{c|}{$\leq 0$}\\
-       Dist $||$ Dcot   & \multicolumn{2}{c|}{$>0.02$}\\
-      \hline
-    \end{tabular}
-    \caption{\label{tab:elecuts} Electron selection.}% Electron selection variables and corresponding cut values.}
-    \end{table}
 
     %table with 
     \begin{table}[htbp]
@@ -190,46 +186,46 @@ lv + X$ production @ $E_{cm} = 7$TeV}
   %\column{.5\textwidth}
     % FIT here
     \begin{center}
-      \includegraphics[width=0.8\textwidth]{fig/fit}
+      \includegraphics[width=0.8\textwidth]{fig/fig1a}
     \end{center}
   %\end{columns}
 \end{frame}
 
 \section{Systematics}
 
+%\begin{frame}{Systematics and Corrections}
+%  \begin{itemize}
+%    \item Four main sources of systematic uncertainty in both channels:
+%    \begin{itemize}
+%      \item Relative efficiencies between $e^{+}$ and $e^{-}$
+%      \item Lepton momentum (energy) scale and resolution
+%    \end{itemize}
+%  \end{itemize}
+%\end{frame}
+
+%\begin{frame}{Signal Extraction Method}
+%  \begin{itemize}
+%    \item Systematic uncertainties evaluated by varying the shapes used in the fits
+%    \item Signal Shape
+%    \begin{itemize}
+%      \item Uncertainty in the recoil correction
+%      \item Theoretical input to the recoil due to PDF uncertainty
+%    \end{itemize}
+%    \item QCD Shape
+%    \begin{itemize}
+%      \item Anti-selection was varied to study the effect on the fit. 
+%    \end{itemize}
+%    \item EWK Shape
+%    \begin{itemize}
+%      \item The relative normalizaton of the $Z \to ee$, $W \to \tau\nu$,
+%      $t\bar{t}$, is modified by $20\%$
+%    \end{itemize}
+% \end{itemize}
+%\end{frame}
+
 \begin{frame}{Systematics and Corrections}
-  \begin{itemize}
-    \item Four main sources of systematic uncertainty in both channels:
-    \begin{itemize}
-      \item Signal estimation method
-      \item Rate of lepton charge misassignment
-      \item Relative efficiencies between $e^{+}$ and $e^{-}$
-      \item Lepton momentum (energy) scale and resolution
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Signal Extraction Method}
-  \begin{itemize}
-    \item Systematic uncertainties evaluated by varying the shapes used in the fits
-    \item Signal Shape
-    \begin{itemize}
-      \item Uncertainty in the recoil correction
-      \item Theoretical input to the recoil due to PDF uncertainty
-    \end{itemize}
-    \item QCD Shape
-    \begin{itemize}
-      \item Anti-selection was varied to study the effect on the fit. 
-    \end{itemize}
-    \item EWK Shape
-    \begin{itemize}
-      \item The relative normalizaton of the $Z \to ee$, $W \to \tau\nu$,
-      $t\bar{t}$, is modified by $20\%$
-    \end{itemize}
- \end{itemize}
-\end{frame}
-
-\begin{frame}{Corrections}
+  %\begin{columns}[c]
+  %\column{.5\textwidth}
   \begin{itemize}
     \item To compare with the theoretical value, the measured lepton asymmetry has to be corrected for experimental effects:
     \begin{itemize}
@@ -259,7 +255,13 @@ lv + X$ production @ $E_{cm} = 7$TeV}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Energy Scale and Resolution}
+\begin{frame}{Systematics and Corrections}
+  \begin{itemize}
+    \item Signal extraction method
+    \begin{itemize}
+      \item Systematic uncertainties evaluated by varying the shapes used in the fits
+    \end{itemize}
+    \item Energy Scale and Resolution
     \begin{itemize}
       \item The electron energy resolution and scale can introduce a bias on the
       asymmetry, due to the effect of resolution for leptons with a transverse
@@ -276,6 +278,7 @@ lv + X$ production @ $E_{cm} = 7$TeV}
         \item $Res^{Data/MC}$ is from a residual data/MC correction 
       \end{itemize}
     \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Summary of Systematic Uncertainties}
@@ -337,6 +340,29 @@ lv + X$ production @ $E_{cm} = 7$TeV}
 
 
 \begin{frame}{Backup}
+\end{frame}
+
+\begin{frame}{Selection}
+    \begin{table}[htbp]
+    \begin{tabular}{|lcc|} \hline
+      \multicolumn{1}{|c}{Variable} & \multicolumn{1}{c}{cut value (barrel)}& \multicolumn{1}{c|}{cut value (endcap)}\\
+        \hline   \hline
+       \multicolumn{3}{|l|}{ID Cuts}\\ \hline
+        H/E & 0.04 & 0.025 \\
+        $\Delta\phi$ & 0.06 & 0.03 \\
+        $\Delta\eta$ & 0.004 & 0.007  \\
+        $\sigma_{\eta\eta}$ & 0.01 & 0.03 \\ \hline
+      \multicolumn{3}{|l|}{Isolation Cuts}\\ \hline
+       $ISO_{trk} / E_T $  & 0.09 & 0.04 \\
+       $ISO_{ecal}/ E_T$  & 0.07 & 0.05 \\
+       $ISO_{hcal}/ E_T$  & 0.10 & 0.025 \\ \hline
+      \multicolumn{3}{|l|}{Conversion Rejection Cuts}\\ \hline
+       Missing Hits  & \multicolumn{2}{c|}{$\leq 0$}\\
+       Dist $||$ Dcot   & \multicolumn{2}{c|}{$>0.02$}\\
+      \hline
+    \end{tabular}
+    \caption{\label{tab:elecuts} Electron selection.}% Electron selection variables and corresponding cut values.}
+    \end{table}
 \end{frame}
 
 \begin{frame}{Results}
