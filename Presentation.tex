@@ -16,7 +16,8 @@
 
 \begin{frame}{Full BDT}
   \begin{itemize}  
-  \item Full BDT with mass
+  \item Reminder:
+  \item ``Full BDT'' including mass variable
   \item Variables used:
   \begin{itemize}  
     \item $P_T^{\gamma 1} / M_{\gamma \gamma}$
@@ -38,66 +39,76 @@
   \begin{columns}[c]
   \column{.4\textwidth}
   \begin{itemize}
-    \item Overtrained (this is a preliminary study)
-    \item Trained with a new version of TMVA.
-    \item Gives a smoother output distribution and a better separation of
-    background and signal
-    \item Not sure what has changed within TMVA to cause this.
+    \item Full range is used in limit setting
+    \item Should add a cut of on BDT output
+    \item Equivilent to the 0.05 cut in the ``other'' BDT methods
   \end{itemize}
   \column{.6\textwidth}
-    \includegraphics[width=\textwidth]{fig/overtrain_full}
+    \includegraphics[width=\textwidth]{fig/bdt_output}
   \end{columns}
 \end{frame}
 
 
-\begin{frame}{Rebinned BDT Outputs}
+\begin{frame}[fragile]{Rebinned BDT Outputs}
   \begin{columns}[c]
   \column{.4\textwidth}
   \begin{itemize}
-    \item Added a cut of -0.05 on BDT output
-    \item Equivilent to the 0.05 cut in the ``other'' BDT method
+    \item Strange behaviour in first bin
+    \item Updating to latest binning code should solve this
+    \item Unsure of the effect on the limit of this bin
   \end{itemize}
   \column{.6\textwidth}
-    Soon...
-    %\includegraphics[width=\textwidth]{fig/InvMassPlot}
+    %\includegraphics[width=\textwidth]{fig/model_m125.0.png}
+    \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m120.0}
   \end{columns}
-\end{frame}
-
-\begin{frame}{Limit Plot}
-\begin{center}
-Soon...
-    % Limit Plot
-    %\includegraphics[width=0.75\textwidth]{fig/limit_likelihood}
-\end{center}
-\end{frame}
-
-\begin{frame}{Things to Do}
-  \begin{itemize}  
-  \item Calculate limit (Ran out of time, but I have workspace)
-  \item What causes the difference between the TMVA Versions
-  \item Further optimisation of TMVA parameters
+  \begin{itemize}
+    \item All plots available on webpage
+    \tiny{\verb=http://www.hep.ph.ic.ac.uk/~mj509/mva-plots-grad/=}
   \end{itemize}
 \end{frame}
+
+\begin{frame}{Limits}
+  \vspace{1cm}
+  \begin{columns}[c]
+  \column{.4\textwidth}
+  \begin{itemize}
+    \item Worse performance
+    \item Rerun with cut on bdt output
+    \item Re-visit the binning
+  \end{itemize}
+\column{.6\textwidth}
+\begin{center}
+
+%table with 
+\begin{table}[htbp]
+\begin{tabular}{|l|r r r r |}
+\hline
+
+Mass & 110 & 120 & 130 & 140 \\ \hline
+2 var & 1.4140 & 1.2070 & 1.1914 & 1.4296 \\
+full  & 1.6953 & 1.3320 & 1.2344 & 1.5703  \\ \hline
+
+\end{tabular}
+\end{table}
+\end{center}
+\end{columns}
+\end{frame}
+
+%\begin{frame}{Things to Do}
+%  \begin{itemize}  
+%  \item todo
+%  \end{itemize}
+%\end{frame}
 
 \begin{frame}{Backup}
 \end{frame}
 
-\begin{frame}{TMVA Versions}
-  \begin{columns}[c]
-  \column{.5\textwidth}
-    \includegraphics[width=\textwidth]{fig/overtrain_full}
-  \column{.5\textwidth}
-    \includegraphics[width=\textwidth]{fig/overtrain_old}
-  \end{columns}
+\begin{frame}{Input Variables 1}
+    \includegraphics[width=\textwidth]{fig/input_var_1}
 \end{frame}
 
-\begin{frame}{Efficiency plot}
-\begin{center}
-    % Limit Plot
-    \includegraphics[width=0.75\textwidth]{fig/efficiency}
-\end{center}
+\begin{frame}{Input Variables 2}
+    \includegraphics[width=\textwidth]{fig/input_var_2}
 \end{frame}
-
-
 
 \end{document}
