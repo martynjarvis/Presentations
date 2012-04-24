@@ -3,7 +3,7 @@
 \usepackage{url}
 
 \author{Martyn Jarvis}
-\title[Input Variables]{How to Select Input Variables}
+\title[Full BDT]{Full BDT}
 
 \begin{document}
 % \begin{frame}
@@ -62,16 +62,16 @@
     \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m120.0}
   \end{columns}
   \begin{itemize}
-    \item All plots available on webpage
-    \tiny{\verb=http://www.hep.ph.ic.ac.uk/~mj509/mva-plots-grad/=}
+    \item All plots available on webpage:~ \tiny{\verb=http://www.hep.ph.ic.ac.uk/~mj509/mva-plots-grad/=}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Limits}
+\begin{frame}{Expected Limits}
   \vspace{1cm}
   \begin{columns}[c]
   \column{.4\textwidth}
   \begin{itemize}
+    \item Results compared to HIG-12-001
     \item Worse performance
     \item Rerun with cut on bdt output
     \item Re-visit the binning
@@ -83,11 +83,9 @@
 \begin{table}[htbp]
 \begin{tabular}{|l|r r r r |}
 \hline
-
-Mass & 110 & 120 & 130 & 140 \\ \hline
-2 var & 1.4140 & 1.2070 & 1.1914 & 1.4296 \\
-full  & 1.6953 & 1.3320 & 1.2344 & 1.5703  \\ \hline
-
+Mass       & 110    & 120    & 130    & 140    \\ \hline
+HIG-12-001 & 1.4140 & 1.2070 & 1.1914 & 1.4296 \\
+Full BDT   & 1.6953 & 1.3320 & 1.2344 & 1.5703 \\ \hline
 \end{tabular}
 \end{table}
 \end{center}
@@ -109,6 +107,31 @@ full  & 1.6953 & 1.3320 & 1.2344 & 1.5703  \\ \hline
 
 \begin{frame}{Input Variables 2}
     \includegraphics[width=\textwidth]{fig/input_var_2}
+\end{frame}
+
+
+\begin{frame}{BDT Outputs}
+  \vspace{1cm}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+    110
+    \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m110.0}
+  \column{.5\textwidth}
+    120
+    \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m120.0}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{BDT Outputs}
+  \vspace{1cm}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+    130
+    \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m130.0}
+  \column{.5\textwidth}
+    140
+    \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m140.0}
+  \end{columns}
 \end{frame}
 
 \end{document}
