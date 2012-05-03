@@ -14,6 +14,55 @@
   %\tableofcontents
 %\end{frame}
 
+\begin{frame}{BDT Outputs}
+  \begin{columns}[c]
+  \column{.4\textwidth}
+  \begin{itemize}
+    \item Considered putting a cut on BDT output; equivilent to the 0.05 cut in the ``other'' BDT methods
+    \item Difficult, as cut would also need to be applied before we obtain mass spectrum, which we use to obtain normalisation, however mass is in the BDT.
+    \item Instead, use whole range, but insist that rebinning algorithm considers -1.0 to 0.0 as a single bin. 
+    \item Solves the problem of strange behaviour in first bin.
+  \end{itemize}
+  \column{.6\textwidth}
+    %\includegraphics[width=\textwidth]{fig/bdt_output}
+    \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m120.0}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Expected Limits}
+  \vspace{1cm}
+%  \begin{columns}[c]
+%  \column{.4\textwidth}
+  \begin{itemize}
+    \item Results compared to HIG-12-001 and what I showed last Friday
+    \item Still see worse performance.
+  \end{itemize}
+%\column{.6\textwidth}
+\begin{center}
+
+%table with 
+\begin{table}[htbp]
+\begin{tabular}{|l|r r r r |}
+\hline
+Mass                & 110    & 120    & 130    & 140    \\ \hline
+HIG-12-001          & 1.4140 & 1.2070 & 1.1914 & 1.4296 \\ \hline
+Full BDT (friday)   & 1.6953 & 1.3320 & 1.2344 & 1.5703 \\ 
+Full BDT (today)    & 1.6461 & 1.3249 & 1.2863 & 1.5515 \\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+%\end{columns}
+\end{frame}
+
+%\begin{frame}{Things to Do}
+%  \begin{itemize}  
+%  \item todo
+%  \end{itemize}
+%\end{frame} 
+
+\begin{frame}{Backup}
+\end{frame}
+
 \begin{frame}{Full BDT}
   \begin{itemize}  
   \item Reminder:
@@ -33,72 +82,6 @@
     \item \alert{$\Delta M/M$ variable}
   \end{itemize}
   \end{itemize}
-\end{frame}
-
-\begin{frame}{BDT Outputs}
-  \begin{columns}[c]
-  \column{.4\textwidth}
-  \begin{itemize}
-    \item Full range is used in limit setting
-    \item Should add a cut of on BDT output
-    \item Equivilent to the 0.05 cut in the ``other'' BDT methods
-  \end{itemize}
-  \column{.6\textwidth}
-    \includegraphics[width=\textwidth]{fig/bdt_output}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}[fragile]{Rebinned BDT Outputs}
-  \begin{columns}[c]
-  \column{.4\textwidth}
-  \begin{itemize}
-    \item Strange behaviour in first bin
-    \item Updating to latest binning code should solve this
-    \item Unsure of the effect on the limit of this bin
-  \end{itemize}
-  \column{.6\textwidth}
-    %\includegraphics[width=\textwidth]{fig/model_m125.0.png}
-    \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m120.0}
-  \end{columns}
-  \begin{itemize}
-    \item All plots available on webpage:~ \tiny{\verb=http://www.hep.ph.ic.ac.uk/~mj509/mva-plots-grad/=}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Expected Limits}
-  \vspace{1cm}
-  \begin{columns}[c]
-  \column{.4\textwidth}
-  \begin{itemize}
-    \item Results compared to HIG-12-001
-    \item Worse performance
-    \item Rerun with cut on bdt output
-    \item Re-visit the binning
-  \end{itemize}
-\column{.6\textwidth}
-\begin{center}
-
-%table with 
-\begin{table}[htbp]
-\begin{tabular}{|l|r r r r |}
-\hline
-Mass       & 110    & 120    & 130    & 140    \\ \hline
-HIG-12-001 & 1.4140 & 1.2070 & 1.1914 & 1.4296 \\
-Full BDT   & 1.6953 & 1.3320 & 1.2344 & 1.5703 \\ \hline
-\end{tabular}
-\end{table}
-\end{center}
-\end{columns}
-\end{frame}
-
-%\begin{frame}{Things to Do}
-%  \begin{itemize}  
-%  \item todo
-%  \end{itemize}
-%\end{frame}
-
-\begin{frame}{Backup}
 \end{frame}
 
 \begin{frame}{Input Variables 1}
