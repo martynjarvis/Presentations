@@ -14,19 +14,23 @@
   %\tableofcontents
 %\end{frame}
 
-\begin{frame}{BDT Outputs}
-  \begin{columns}[c]
-  \column{.4\textwidth}
+\begin{frame}{Background Normalisation}
+  %\begin{columns}[c]
+  %\column{.4\textwidth}
   \begin{itemize}
-    \item Considered putting a cut on BDT output; equivilent to the 0.05 cut in the ``other'' BDT methods
-    \item Difficult, as cut would also need to be applied before we obtain mass spectrum, which we use to obtain normalisation, however mass is in the BDT.
-    \item Instead, use whole range, but insist that rebinning algorithm considers -1.0 to 0.0 as a single bin. 
-    \item Solves the problem of strange behaviour in first bin.
+    \item Without cut on BDT output, background normalisation systematic was too large.
+    \item Tried scaling systematic by 1/sqrt(N). However this is probably not correct.
+    \item Instead, put cut on MIT BDT back in.
+    \begin{itemize}
+        \item Evaulate ``mass included'' BDT and MIT diphoton BDT
+        \item Apply a cut at 0.05 on MIT BDT
+        \item Use ``mass included'' BDT to evaluate limits
+    \end{itemize}
+    \item Should reevaluate systematic without any cut.
   \end{itemize}
-  \column{.6\textwidth}
-    %\includegraphics[width=\textwidth]{fig/bdt_output}
-    \includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m120.0}
-  \end{columns}
+  %\column{.6\textwidth}
+    %\includegraphics[width=\textwidth, type=pdf,ext=.pdf,read=.pdf]{fig/model_m120.0}
+  %\end{columns}
 \end{frame}
 
 \begin{frame}{Expected Limits}
@@ -34,8 +38,8 @@
 %  \begin{columns}[c]
 %  \column{.4\textwidth}
   \begin{itemize}
-    \item Results compared to HIG-12-001 and what I showed last Friday
-    \item Still see worse performance.
+    \item Results compared to HIG-12-001.
+    \item Comparable results.
   \end{itemize}
 %\column{.6\textwidth}
 \begin{center}
@@ -45,14 +49,20 @@
 \begin{tabular}{|l|r r r r |}
 \hline
 Mass                & 110    & 120    & 130    & 140    \\ \hline
-HIG-12-001          & 1.4140 & 1.2070 & 1.1914 & 1.4296 \\ \hline
-Full BDT (friday)   & 1.6953 & 1.3320 & 1.2344 & 1.5703 \\ 
-Full BDT (today)    & 1.6461 & 1.3249 & 1.2863 & 1.5515 \\ \hline
+HIG-12-001          & 1.4140 & 1.2070 & 1.1914 & 1.4296 \\ 
+Full BDT            & 1.4281 & 1.1984 & 1.2012 & 1.4215 \\ \hline
 \end{tabular}
 \end{table}
 \end{center}
 %\end{columns}
 \end{frame}
+
+\begin{frame}{Limit Plot}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{/home/hep/mj509/public_html/fullbdt_4_30/limit_sm_Asymptotic_Ratio}
+\end{center}
+\end{frame}
+
 
 %\begin{frame}{Things to Do}
 %  \begin{itemize}  
