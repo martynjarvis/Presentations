@@ -39,19 +39,19 @@ lv + X$ production @ $E_{cm} = 7$TeV}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Motivation}
-  \begin{columns}[c]
-  \column{.4\textwidth}
-  \begin{itemize}
-    %\item Lepton charge asymmetry and W charge asymmetry have been studied
-    %\item Several authors have reported tension between the lepton charge asymmetry and PDF global fits
-    \item Theoretical prediction precision $4-5 \%$
-    \item Current predictions for the asymmetry at the LHC do not agree
-  \end{itemize}
-  \column{.6\textwidth}
-    \includegraphics[width=\textwidth]{fig/asym_theory}
-  \end{columns}
-\end{frame}
+%\begin{frame}{Motivation}
+  %\begin{columns}[c]
+  %\column{.4\textwidth}
+  %\begin{itemize}
+    %%\item Lepton charge asymmetry and W charge asymmetry have been studied
+    %%\item Several authors have reported tension between the lepton charge asymmetry and PDF global fits
+    %\item Theoretical prediction precision $4-5 \%$
+    %\item Current predictions for the asymmetry at the LHC do not agree
+  %\end{itemize}
+  %\column{.6\textwidth}
+    %\includegraphics[width=\textwidth]{fig/asym_theory}
+  %\end{columns}
+%\end{frame}
 
 
 
@@ -64,7 +64,9 @@ lv + X$ production @ $E_{cm} = 7$TeV}
     \item Previous CMS measurement with the full 2010 dataset of $36 pb^{-1}$ in both electron and muon channel
     \item Lepton charge asymmetry and W charge asymmetry also been studied at ATLAS and LHCb
     \item Muon channel measurement using $234pb^{-1}$ of 2011 dataset
-    \vspace{1cm}
+    \item Theoretical prediction precision $4-5 \%$
+    \item Current predictions for the asymmetry at the LHC do not agree
+    \vspace{0.25cm}
     \item This new measurement has been performed with $840pb^{-1}$ of data from the 2011 dataset.
   \end{itemize}
   \column{.5\textwidth}
@@ -147,10 +149,43 @@ lv + X$ production @ $E_{cm} = 7$TeV}
     cluster center and first tracker hit)
   \end{itemize}
   \column{.5\textwidth}
-    %table of cuts
-    \tiny{
-  \begin{center}
 
+\tiny{
+    \begin{center}
+    \begin{table}[htbp]
+    \begin{tabular}{|lcc|} \hline
+      \multicolumn{1}{|c}{Variable} & \multicolumn{1}{c}{cut value (barrel)}& \multicolumn{1}{c|}{cut value (endcap)}\\
+        \hline   \hline
+       \multicolumn{3}{|l|}{ID Cuts}\\ \hline
+        H/E & 0.04 & 0.025 \\
+        $\Delta\phi$ & 0.06 & 0.03 \\
+        $\Delta\eta$ & 0.004 & 0.007  \\
+        $\sigma_{\eta\eta}$ & 0.01 & 0.03 \\ \hline
+      \multicolumn{3}{|l|}{Isolation Cuts}\\ \hline
+       $ISO_{trk} / E_T $  & 0.09 & 0.04 \\
+       $ISO_{ecal}/ E_T$  & 0.07 & 0.05 \\
+       $ISO_{hcal}/ E_T$  & 0.10 & 0.025 \\ \hline
+      \multicolumn{3}{|l|}{Conversion Rejection Cuts}\\ \hline
+       Missing Hits  & \multicolumn{2}{c|}{$\leq 0$}\\
+       Dist $||$ Dcot   & \multicolumn{2}{c|}{$>0.02$}\\
+      \hline
+    \end{tabular}
+    \caption{\label{tab:elecuts} Electron selection.}% Electron selection variables and corresponding cut values.}
+    \end{table}
+    \end{center}
+}
+    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Selected Events}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/selected}
+
+  \column{.5\textwidth}
+  \tiny{
+    \begin{center}
     %table with 
     \begin{table}[htbp]
     \begin{tabular}{|l|r|}
@@ -168,68 +203,176 @@ lv + X$ production @ $E_{cm} = 7$TeV}
     \end{table}
   \end{center}
   }
+  \normalsize
 
-    %\includegraphics[width=\textwidth]{fig/overtrain_old_same_script}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Selected Events}
-  %\begin{columns}[c]
-  %\column{.5\textwidth}
   \begin{itemize}
     \item Apply electron selection, then extended binned maximum likelihood fit to the MET distribution for electrons and positrons separately
     \item Two template shapes:
     \begin{itemize}
-      \item Signal + EWK backgrounds : MC + correction from $Z \to ee$ recoil in data 
-      \item QCD shape is determined using a signal-free control sample obtained by inverting a subset of the electron ID criteria
+      \item Signal + EWK backgrounds 
+      \item QCD background shape 
     \end{itemize}
   \end{itemize}
+
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Signal Template}
+  \begin{itemize}
+  \item The hadronic recoil (U) represents the hadronic activity needed to balance the boson pT in the transverse plane
+  \end{itemize}
+
+  \begin{columns}[c]
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/recoil}
+  \column{.5\textwidth}
+  \begin{itemize}
+  \item The hadronic recoil correction is derived from real Z events and applied at generation level to the simulated W events to derive the expected MET distribution
+  \item A correction is applied the the highest eta bin to account for mis-measured electrons 
+  \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{EWK Background Template}
+  \begin{itemize}
+    \item $W \to \tau \nu$
+    \begin{itemize}
+      \item Madgraph corrected with the recoil method. 
+      \item Normalization given by 
+      \begin{equation}
+      \frac { \sigma W \times Br(W\to\tau\nu) \times eff(W\to\tau\nu)}
+      { \sigma W \times Br(W\to e \nu) \times eff(W\to e\nu)}
+      \end{equation}
+    \end{itemize}
+    \item $Z \to ee, \tau \tau$
+    \begin{itemize}
+      \item Simulated madgraph sample $(DY \to ll)$.
+      \item Normalization given by %(sigmaZ*Br(Z->ll)*eff(Z))/(sigmaW*Br(W->enu)*eff(W->enu))
+      \begin{equation}
+      \frac { \sigma Z \times Br(Z\to ll) \times eff(Z\to ll)}
+      { \sigma W \times Br(W\to e \nu) \times eff(W\to e\nu)}
+      \end{equation}
+    \end{itemize}
+    \item $t\bar t$
+    \begin{itemize}
+      \item The template is from a simulated madgraph sample
+      \item The normalization of tt to $W\to e \nu$ is given by %sigmatt*eff(tt) /sigmaW*Br(W->enu)* eff (W->enu))
+      \begin{equation}
+      \frac { \sigma t\bar t \times Br(t\bar t) \times eff(t\bar t)}
+      { \sigma W \times Br(W\to e \nu) \times eff(W\to e\nu)}
+      \end{equation}
+    \end{itemize}
+    \item NLO values for $\sigma Z$ and $\sigma W$. 
+    \item The detection efficiencies are from the simulated madgraph samples.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{QCD Background Template}
+  \begin{itemize}
+    \item The anti-selected electrons are required to pass the WP80 isolation
+    and H/E cuts and fail the $\Delta \phi$ and $\Delta \eta$ cuts
+  \end{itemize}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/qcd1}
+  \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{fig/qcd2}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Signal Extraction}
+  \begin{itemize}
+    \item Extended binned maximum likelihood fit to the MET distribution for
+    electrons and positrons in each eta bin separately
+  \end{itemize}
+  %\begin{columns}[c]
+  %\column{.5\textwidth}
   %\column{.5\textwidth}
     % FIT here
     \begin{center}
-      \includegraphics[width=0.8\textwidth]{fig/fig1a}
+      \includegraphics[width=0.8\textwidth]{fig/fit1}
     \end{center}
   %\end{columns}
 \end{frame}
 
+\begin{frame}{Uncorrected Asymmetry}
+  % TODO plot of met distribution
+  \begin{columns}[c]
+  \column{.5\textwidth}
+
+   \begin{table}[h]
+     \begin{center}
+       \begin{tabular}{|l|c|}
+       \hline
+       $|\eta|$ range & $\mathcal{A}_{exp} (\times 10^{-3})$\\
+       \hline    
+       \hline
+       $0.0<|\eta|<0.4$ & 106.9 $\pm$ 2.7\\
+       $0.2<|\eta|<0.4$ & 112.9 $\pm$ 2.7\\
+       $0.4<|\eta|<0.6$ & 112.5 $\pm$ 2.7\\
+       $0.6<|\eta|<0.8$ & 125.5 $\pm$ 2.7\\
+       $0.8<|\eta|<1.0$ & 130.7 $\pm$ 2.7\\
+       $1.0<|\eta|<1.2$ & 144.3 $\pm$ 2.9\\
+       $1.2<|\eta|<1.4$ & 159.5 $\pm$ 3.0 \\
+       $1.6<|\eta|<1.8$ & 186.1 $\pm$ 3.4\\
+       $1.8<|\eta|<2.0$ & 191.8 $\pm$ 3.2\\
+       $2.0<|\eta|<2.2$ & 206.9 $\pm$ 3.3\\
+       $2.2<|\eta|<2.4$ & 203.4 $\pm$ 4.1\\
+       \hline
+       \end{tabular}
+  %   \caption{\label{tab:uncorRes}Uncorrected values ($\times 10^{-3}$) of the charge asymmetry  for an integrated luminosity of \currlumi\ }
+     \end{center}
+   \end{table}
+  \column{.5\textwidth}
+  \begin{itemize}
+  \item The statistical error on uncorrected asymmetry is given by:
+
+  \tiny{
+  \begin{equation}
+    \delta(\mathcal{A})_{stat}(\eta) = 
+    \frac{2 \times \sqrt{ \left( P(\eta) \sigma_{N(\eta)}\right) ^2 + \left( E(\eta) \sigma_{P (\eta)}\right)^2}}{\left(  P(\eta) +  E(\eta) \right)^{2} }
+  \end{equation}
+  }
+  \normalsize
+
+    \item To compare with the theoretical value, the measured lepton asymmetry
+    has to be corrected for experimental effects.
+  \end{itemize}
+  \end{columns}
+\end{frame}
+
+
 \section{Systematics}
 
-%\begin{frame}{Systematics and Corrections}
-%  \begin{itemize}
-%    \item Four main sources of systematic uncertainty in both channels:
-%    \begin{itemize}
-%      \item Relative efficiencies between $e^{+}$ and $e^{-}$
-%      \item Lepton momentum (energy) scale and resolution
-%    \end{itemize}
-%  \end{itemize}
-%\end{frame}
+\begin{frame}{Systematics: Signal Extraction}
+  \begin{itemize}
+    \item Systematic uncertainties evaluated by varying the shapes used in the fits
+    \item Signal Shape
+    \begin{itemize}
+      \item Uncertainty in the recoil correction
+      \item Theoretical input to the recoil due to PDF uncertainty
+    \end{itemize}
+    \item QCD Shape
+    \begin{itemize}
+      \item Anti-selection was varied to study the effect on the fit. 
+    \end{itemize}
+    \item EWK Shape
+    \begin{itemize}
+      \item The relative normalizaton of the $Z \to ee$, $W \to \tau\nu$,
+      $t\bar{t}$, is modified by $20\%$
+    \end{itemize}
+ \end{itemize}
+\end{frame}
 
-%\begin{frame}{Signal Extraction Method}
-%  \begin{itemize}
-%    \item Systematic uncertainties evaluated by varying the shapes used in the fits
-%    \item Signal Shape
-%    \begin{itemize}
-%      \item Uncertainty in the recoil correction
-%      \item Theoretical input to the recoil due to PDF uncertainty
-%    \end{itemize}
-%    \item QCD Shape
-%    \begin{itemize}
-%      \item Anti-selection was varied to study the effect on the fit. 
-%    \end{itemize}
-%    \item EWK Shape
-%    \begin{itemize}
-%      \item The relative normalizaton of the $Z \to ee$, $W \to \tau\nu$,
-%      $t\bar{t}$, is modified by $20\%$
-%    \end{itemize}
-% \end{itemize}
-%\end{frame}
-
-\begin{frame}{Systematics and Corrections}
+\begin{frame}{Systematics: Charge Mis-Id and Relative Efficiency}
   %\begin{columns}[c]
   %\column{.5\textwidth}
   \begin{itemize}
     \item To compare with the theoretical value, the measured lepton asymmetry has to be corrected for experimental effects:
-    \begin{itemize}
+    %\begin{itemize}
       \item Charge mis-id $(\omega)$: 
       \begin{itemize}
         \item Introduces a dilution factor to the real asymmetry
@@ -252,17 +395,11 @@ lv + X$ production @ $E_{cm} = 7$TeV}
           \frac{1}{1-2\omega}\left(\mathcal{A}_M -\frac{\left(R-1\right)\left(1-\mathcal{A}_M^2\right)}{2}\right)
       \end{equation}
       \end{center}
-    \end{itemize}
+    %\end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Systematics and Corrections}
-  \begin{itemize}
-    \item Signal extraction method
-    \begin{itemize}
-      \item Systematic uncertainties evaluated by varying the shapes used in the fits
-    \end{itemize}
-    \item Energy Scale and Resolution
+\begin{frame}{Systematics: Energy Scale and Resolution}
     \begin{itemize}
       \item The electron energy resolution and scale can introduce a bias on the
       asymmetry, due to the effect of resolution for leptons with a transverse
@@ -279,7 +416,6 @@ lv + X$ production @ $E_{cm} = 7$TeV}
         \item $Res^{Data/MC}$ is from a residual data/MC correction 
       \end{itemize}
     \end{itemize}
-  \end{itemize}
 \end{frame}
 
 \begin{frame}{Summary of Systematic Uncertainties}
@@ -324,7 +460,7 @@ lv + X$ production @ $E_{cm} = 7$TeV}
 
 \begin{frame}{Results}
   \begin{center}
-    \includegraphics[width=0.6\textwidth]{fig/powheg_results}
+    \includegraphics[width=0.6\textwidth]{fig/result}
   \end{center}
 \end{frame}
 
@@ -333,8 +469,12 @@ lv + X$ production @ $E_{cm} = 7$TeV}
     \item Lepton charge asymmetry has been measured in $W\to e\nu$ for $P_T>35$
     GeV in 11 $|\eta|$ bins with $840\ \mathrm{pb}^{-1}$ 
     \item $\sigma(Ae) = (6-14) x 10^{-3}$
-    \item This measurement data with full error correlation matrix will be used by theorists to
+    \item This measurement, with full error correlation matrix, will be used by theorists to
     improve the knowledge of PDFs
+    \vspace{1cm}
+    \item The paper appeared on arxiv this morning:
+    \url{http://arxiv.org/pdf/1206.2598v1.pdf}
+    \item The paper has been submitted to PRL.
 
   \end{itemize}
 \end{frame}
@@ -368,6 +508,21 @@ lv + X$ production @ $E_{cm} = 7$TeV}
     \end{table}
 \end{center}
     }
+\end{frame}
+
+\begin{frame}{Signal Extraction}
+  \begin{itemize}
+    \item Extended binned maximum likelihood fit to the MET distribution for
+    electrons and positrons in each eta bin separately
+  \end{itemize}
+  %\begin{columns}[c]
+  %\column{.5\textwidth}
+  %\column{.5\textwidth}
+    % FIT here
+    \begin{center}
+      \includegraphics[width=0.8\textwidth]{fig/fit2}
+    \end{center}
+  %\end{columns}
 \end{frame}
 
 \begin{frame}{Results}
