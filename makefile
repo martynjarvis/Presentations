@@ -22,4 +22,4 @@ show: $(OUTPUT).pdf
 	$(VIEW) $(OUTPUT).pdf
 
 clean::
-	-rm *.toc *.aux *.log *.lof *.bib *.bbl *.blg *.dvi *.out *.nav *.snm *.vrb mjarvis*.pdf
+	-rm -fv *.toc *.aux *.log *.lof *.bib *.bbl *.blg *.dvi *.out *.nav *.snm *.vrb mjarvis*.pdf
