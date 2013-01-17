@@ -25,3 +25,8 @@
 *.out
 *.synctex.gz
 *.pdf
+*.png
+*.jpeg
+*.jpg
+*.gif
+
