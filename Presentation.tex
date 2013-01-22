@@ -1,4 +1,4 @@
-\documentclass[t, 8pt]{beamer}
+\documentclass[8pt]{beamer}
 \usetheme{iclpt}
 \usepackage{url}
 
@@ -12,7 +12,21 @@ lv + X$ production @ $E_{cm} = 7$TeV}
 \end{frame}
 
 \begin{frame}{Outline}
+\vspace{1cm}
+  \begin{columns}[c]
+  \column{.5\textwidth}
+  Outline
+\vspace{1cm}
   \tableofcontents
+  \column{.5\textwidth}
+  Disclaimer
+\vspace{1cm}
+  \begin{itemize}
+    \item Thesis analysis talk
+    \item Covers material that makes up the analysis chapter of my thesis
+    \item Might have heard this before...
+  \end{itemize}
+  \end{columns}
 \end{frame}
 
 \section{Introduction}
@@ -40,26 +54,23 @@ lv + X$ production @ $E_{cm} = 7$TeV}
 \end{frame}
 
 \section{History}
-
-\begin{frame}{Publications}
-  \begin{columns}[c]
-  \column{.5\textwidth}
-  \begin{itemize}
-    \item Previous CMS measurement with the full 2010 dataset of $36 pb^{-1}$ in both electron and muon channel
-    \item Lepton charge asymmetry and W charge asymmetry also been studied at ATLAS and LHCb
-    \item Muon channel measurement using $234pb^{-1}$ of 2011 dataset
-    \item Theoretical prediction precision $4-5 \%$
-    \item Current predictions for the asymmetry at the LHC do not agree
-    \vspace{0.25cm}
-    \item This new measurement has been performed with $840pb^{-1}$ of data from the 2011 dataset.
-  \end{itemize}
-  \column{.5\textwidth}
-    \includegraphics[width=\textwidth]{fig/2011_asym_combined}
-  \end{columns}
-\end{frame}
-
+%\begin{frame}{Publications}
+  %\begin{columns}[c]
+  %\column{.5\textwidth}
+  %\begin{itemize}
+    %\item Previous CMS measurement with the full 2010 dataset of $36 pb^{-1}$ in both electron and muon channel
+    %\item Lepton charge asymmetry and W charge asymmetry also been studied at ATLAS and LHCb
+    %\item Muon channel measurement using $234pb^{-1}$ of 2011 dataset
+    %\item Theoretical prediction precision $4-5 \%$
+    %\item Current predictions for the asymmetry at the LHC do not agree
+    %\vspace{0.25cm}
+    %\item This new measurement has been performed with $840pb^{-1}$ of data from the 2011 dataset.
+  %\end{itemize}
+  %\column{.5\textwidth}
+    %\includegraphics[width=\textwidth]{fig/2011_asym_combined}
+  %\end{columns}
+%\end{frame}
 %\section{LHC Performance}
-
 
 %\begin{frame}{LHC Performance in 2011}
   %\begin{columns}[c]
@@ -96,11 +107,9 @@ lv + X$ production @ $E_{cm} = 7$TeV}
     \end{itemize}
     %\item Lepton pT> 35 GeV (limit set by single electron trigger) 
     \item The number of the electron / positron is extracted from a extended binned likelihood fit of the MET distribution
-    \item 11 bins in $|\eta|$
+    \item Results presented in $|\eta|$ bins from 0.0 to 2.4
     \begin{itemize}
-      %\item  $[0-0.2], [0.2-0.4], [0.4-0.6], [0.6-0.8], [0.8-1.0], [1.0-1.2], [1.2-1.4], [1.6-1.8], [1.8-2.0], [2.0-2.2], [2.2-2.4]$
-      \item $0.0 < |\eta| < 2.4$ in bin widths of 0.2
-      \item $[1.4-1.6]$ bin excluded because of the transition region between Ecal Barrel and Ecal Endcap
+      \item $[1.4-1.6]$ region excluded because of the transition region between Ecal Barrel and Ecal Endcap
     \end{itemize}
   \end{itemize}
   \column{.5\textwidth}
@@ -112,10 +121,25 @@ lv + X$ production @ $E_{cm} = 7$TeV}
   \begin{columns}[c]
   \column{.5\textwidth}
     \begin{itemize}
-      \item changes here (electron pt, binning, etc)
+      \item First measurement performed with $36 pb^{-1}$ of 2010 data
+      \begin{itemize}
+        \item 6 bins in $|\eta|$ with width 0.4
+        \item Electron $P_T$ cuts of 25,30 and 35 GeV
+        \item Published in JHEP
+        \item \url{arxiv.org/abs/1103.3470}
+      \end{itemize}
+      \item Second measurement performed with $840 pb^{-1}$ of 2011 data
+      \begin{itemize}
+        \item 11 bins in $|\eta|$ with width 0.2
+        \item Electron $P_T$ cut of 35 GeV
+        \item Published in PRL
+        \item \url{arxiv.org/abs/1206.2598}
+      \end{itemize}
+      \item Thesis currently contains both measurements
+      \item This talk will summarise the latter measurement
     \end{itemize}
   \column{.5\textwidth}
-    \missingfigure{data taken at CMS figure}
+    \includegraphics[width=\textwidth]{fig/int_lumi_cumulative_pp_1.png}
   \end{columns}
 \end{frame}
 
@@ -461,15 +485,12 @@ lv + X$ production @ $E_{cm} = 7$TeV}
 
 \begin{frame}{Conclusion}
   \begin{itemize}
-    \item Lepton charge asymmetry has been measured in $W\to e\nu$ for $P_T>35$
-    GeV in 11 $|\eta|$ bins with $840\ \mathrm{pb}^{-1}$ 
+    \item Described the electron charge asymmetry measurement in $W\to e\nu$ for
+$P_T>35$ GeV in 11 $|\eta|$ bins with $840\ \mathrm{pb}^{-1}$ 
     \item $\sigma(Ae) = (6-14) x 10^{-3}$
-    \item This measurement, with full error correlation matrix, will be used by theorists to
-    improve the knowledge of PDFs
     \vspace{1cm}
-    \item The paper appeared on arxiv this morning:
-    \url{http://arxiv.org/pdf/1206.2598v1.pdf}
-    \item The paper has been submitted to PRL.
+    \item Currently writing up
+    \item This analysis forms the bulk of my analysis chapters
 
   \end{itemize}
 \end{frame}
@@ -477,6 +498,23 @@ lv + X$ production @ $E_{cm} = 7$TeV}
 
 \begin{frame}{Backup}
 \end{frame}
+
+\begin{frame}{$W^{+}$ production and decay}
+  \begin{columns}[c]
+  \column{.4\textwidth}
+  \begin{itemize}
+  \item $W^{+}$ produced in direction of up valence quark
+  \item right handed $e^{+}$ produced in direction of right handed anti down sea quark
+  \item ``Pushes'' $e^{+}$ to be more central
+  \item Oposite is true for $e^{-}$
+  \end{itemize}
+  \column{.6\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{fig/w_decay_directions}
+    \end{center}
+  \end{columns}
+\end{frame}
+
 
 \begin{frame}{Selection}
 \tiny{
